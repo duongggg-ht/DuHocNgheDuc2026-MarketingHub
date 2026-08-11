@@ -275,6 +275,291 @@
 
   /* Segment cards (phan khuc) */
   .seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s2);}
+
+  /* ===== Persona cards (Phan khuc khach hang v2) ===== */
+  .seg-overview-note{
+    font-size:13px;color:var(--ink-soft);background:var(--red-tint-05);
+    border:1px solid var(--red-tint-14);border-radius:var(--radius-sm);
+    padding:12px 16px;margin-bottom:var(--s3);display:inline-block;
+  }
+  .seg-overview-note strong{color:var(--red);}
+  .persona-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s2);margin-bottom:var(--s3);}
+  .persona-card{
+    border:1px solid var(--gray-300);border-radius:var(--radius);padding:20px;background:#fff;
+    cursor:pointer;transition:transform .18s, box-shadow .18s;
+  }
+  .persona-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--red-tint-14);}
+  .persona-card .pc-num{font-size:12px;font-weight:800;color:var(--red);}
+  .persona-card h4{font-size:15px;margin:8px 0 10px;color:var(--ink);line-height:1.3;min-height:38px;}
+  .persona-card .pc-percent{font-size:30px;font-weight:900;font-family:'Be Vietnam Pro',sans-serif;color:var(--ink);margin-bottom:12px;}
+  .persona-card .pc-persona-label{font-size:10.5px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:.05em;}
+  .persona-card .pc-persona-name{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:16px;}
+  .persona-card .pc-cta{font-size:12.5px;font-weight:800;color:var(--red);display:flex;align-items:center;gap:5px;}
+
+  .group-card{
+    display:flex;align-items:flex-start;gap:16px;
+    border:1px solid var(--gray-300);border-radius:var(--radius);padding:20px 22px;
+    background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;
+    cursor:pointer;transition:transform .18s, box-shadow .18s;margin-bottom:var(--s2);
+  }
+  .group-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+  .group-card .gc-body{flex:1;}
+  .group-card .gc-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;opacity:.85;margin-bottom:4px;}
+  .group-card h4{font-size:17px;color:#fff;margin-bottom:6px;}
+  .group-card p{font-size:13px;color:rgba(255,255,255,0.88);margin-bottom:10px;}
+  .group-card .chip-row span{background:rgba(255,255,255,0.18);color:#fff;}
+  .group-card .gc-cta{font-size:12.5px;font-weight:800;color:#fff;display:flex;align-items:center;gap:5px;align-self:center;white-space:nowrap;}
+  .group-card.niche{
+    background:#fff;color:var(--ink);border:1px dashed var(--gray-400);
+  }
+  .group-card.niche .gc-label{color:var(--gray-600);opacity:1;}
+  .group-card.niche h4{color:var(--ink);}
+  .group-card.niche p{color:var(--ink-soft);}
+  .group-card.niche .gc-cta{color:var(--red);}
+  .group-card.niche .ico-badge{background:var(--gray-100);color:var(--ink-soft);}
+
+  .general-insight-card{
+    background:var(--gray-100);border:1px solid var(--gray-300);border-radius:var(--radius);
+    padding:18px 22px;margin-top:var(--s2);
+  }
+  .general-insight-card .gi-label{font-size:11px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+  .general-insight-card h4{font-size:14.5px;color:var(--ink);margin-bottom:6px;}
+  .general-insight-card p{font-size:13px;margin:0;}
+
+  /* ===== Profile Drawer ===== */
+  .drawer-overlay{
+    position:fixed;inset:0;background:rgba(20,20,20,0.45);z-index:200;
+    opacity:0;pointer-events:none;transition:opacity .25s;
+  }
+  .drawer-overlay.open{opacity:1;pointer-events:auto;}
+  .drawer{
+    position:fixed;top:0;right:0;height:100vh;width:min(560px,92vw);
+    background:#fff;z-index:201;box-shadow:-10px 0 34px rgba(0,0,0,0.18);
+    transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.8,.2,1);
+    overflow-y:auto;display:none;
+  }
+  .drawer.open{transform:translateX(0);display:block;}
+  .drawer-head{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;padding:26px 60px 22px 28px;position:relative;}
+  .drawer-head .dh-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;opacity:.85;margin-bottom:8px;}
+  .drawer-head h3{font-size:22px;color:#fff;line-height:1.25;}
+  .drawer-head .dh-percent{font-size:13px;margin-top:8px;opacity:.9;}
+  .drawer-close{
+    position:absolute;top:20px;right:20px;width:34px;height:34px;border-radius:50%;
+    background:rgba(255,255,255,0.2);color:#fff;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;font-size:20px;border:none;line-height:1;
+  }
+  .drawer-close:hover{background:rgba(255,255,255,0.32);}
+  .drawer-body{padding:26px 28px 60px;}
+  .drawer-section{margin-bottom:26px;}
+  .drawer-section h5{font-size:12px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);}
+  .drawer-section p{font-size:13.5px;color:var(--ink-soft);line-height:1.62;margin:0;}
+  .drawer-section ul li{font-size:13.5px;color:var(--ink-soft);padding-left:16px;position:relative;margin-bottom:8px;line-height:1.55;}
+  .drawer-section ul li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;background:var(--red);border-radius:50%;}
+  .drawer-quote{font-style:italic;font-size:14px;color:var(--ink);background:var(--red-tint-05);border-left:3px solid var(--red);padding:12px 16px;border-radius:0 8px 8px 0;}
+  .drawer-persona-box{display:flex;gap:14px;align-items:center;background:var(--gray-100);border-radius:var(--radius-sm);padding:16px;margin-bottom:24px;}
+  .drawer-persona-box .avatar{width:50px;height:50px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px;flex:0 0 50px;font-family:'Be Vietnam Pro',sans-serif;}
+  .drawer-persona-box .pb-name{font-size:14.5px;font-weight:800;color:var(--ink);margin-bottom:3px;}
+  .drawer-persona-box .pb-sub{font-size:12px;color:var(--ink-soft);}
+  .overview-mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .overview-mini .om-item{background:var(--gray-100);border-radius:8px;padding:10px 12px;}
+  .overview-mini .om-item .lbl{font-size:10px;font-weight:800;text-transform:uppercase;color:var(--gray-600);margin-bottom:3px;letter-spacing:.03em;}
+  .overview-mini .om-item .val{font-size:12.5px;color:var(--ink);font-weight:600;line-height:1.4;}
+  .chip-row{display:flex;gap:8px;flex-wrap:wrap;}
+  .chip-row span{font-size:11px;font-weight:700;background:var(--red-tint-08);color:var(--red);padding:4px 10px;border-radius:999px;}
+  .insight-topic{font-size:13.5px;font-weight:800;color:var(--ink);margin:4px 0 12px;}
+  .insight-layer{border-left:3px solid var(--gray-300);padding-left:14px;margin-bottom:14px;}
+  .insight-layer.il-final{border-left-color:var(--red);}
+  .insight-layer .il-label{font-size:10.5px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;}
+  .insight-layer p{font-size:13px;color:var(--ink-soft);margin:0;line-height:1.55;}
+
+  @media (max-width:900px){
+    .persona-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:600px){
+    .persona-grid{grid-template-columns:1fr;}
+    .overview-mini{grid-template-columns:1fr;}
+    .drawer-head{padding:22px 54px 18px 20px;}
+    .drawer-body{padding:20px 20px 50px;}
+  }
+
+
+  /* ===== Segment module v2 (DHND personas + drawer) ===== */
+  .seg2-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);}
+  .seg2-card{
+    border:1px solid var(--gray-300);border-radius:var(--radius);padding:22px;background:#fff;
+    cursor:pointer;transition:transform .18s, box-shadow .18s;text-align:left;width:100%;font-family:inherit;
+  }
+  .seg2-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--red-tint-14);}
+  .seg2-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
+  .seg2-num{font-size:12px;font-weight:800;color:var(--gray-600);letter-spacing:.04em;}
+  .seg2-pct{font-size:24px;font-weight:900;color:var(--red);font-family:'Be Vietnam Pro',sans-serif;line-height:1;}
+  .seg2-card h4{font-size:16.5px;color:var(--ink);margin-bottom:10px;line-height:1.3;}
+  .seg2-persona{font-size:12.5px;color:var(--ink-soft);margin-bottom:16px;}
+  .seg2-persona strong{color:var(--ink);}
+  .seg2-cta{font-size:12.5px;font-weight:700;color:var(--red);display:flex;align-items:center;gap:4px;}
+
+  .group-card{
+    border:1px solid var(--gray-300);border-radius:var(--radius);padding:20px 22px;background:var(--gray-100);
+    cursor:pointer;transition:box-shadow .18s;display:flex;align-items:center;gap:16px;width:100%;text-align:left;font-family:inherit;
+  }
+  .group-card:hover{box-shadow:var(--shadow-sm);}
+  .group-card.niche{background:#fff;}
+  .group-card .gc-icon{
+    width:44px;height:44px;border-radius:12px;background:var(--red);color:#fff;
+    display:flex;align-items:center;justify-content:center;flex:0 0 44px;
+  }
+  .group-card.niche .gc-icon{background:var(--gray-400);}
+  .group-card .gc-body{flex:1;}
+  .group-card .gc-badge{
+    font-size:10px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;
+    background:var(--red-tint-08);padding:3px 9px;border-radius:999px;display:inline-block;margin-bottom:7px;
+  }
+  .group-card.niche .gc-badge{color:var(--gray-600);background:var(--gray-200);}
+  .group-card h4{font-size:15px;color:var(--ink);margin-bottom:3px;}
+  .group-card p{font-size:12.5px;margin:0;}
+  .group-card .gc-cta{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--red);white-space:nowrap;}
+
+  /* ===== Profile Drawer ===== */
+  .drawer-overlay{
+    position:fixed;inset:0;background:rgba(20,20,20,0.45);z-index:200;
+    opacity:0;pointer-events:none;transition:opacity .25s;
+  }
+  .drawer-overlay.open{opacity:1;pointer-events:auto;}
+  .profile-drawer{
+    position:fixed;top:0;right:-100%;width:100%;max-width:640px;height:100vh;background:#fff;z-index:201;
+    box-shadow:-10px 0 40px rgba(0,0,0,0.18);transition:right .3s ease;overflow-y:auto;
+  }
+  .profile-drawer.open{right:0;}
+  .drawer-header{
+    position:sticky;top:0;background:#fff;border-bottom:1px solid var(--gray-300);
+    padding:20px 24px;display:flex;justify-content:space-between;align-items:flex-start;z-index:2;gap:14px;
+  }
+  .dh-label{font-size:11px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+  .drawer-header h3{font-size:19px;color:var(--ink);line-height:1.3;}
+  .dh-pct{font-size:13px;font-weight:700;color:var(--red);margin-top:4px;}
+  .drawer-close{
+    width:32px;height:32px;border-radius:50%;border:1px solid var(--gray-300);background:#fff;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;color:var(--ink-soft);flex:0 0 32px;
+  }
+  .drawer-close:hover{background:var(--gray-100);}
+  .drawer-body{padding:24px;}
+  .drawer-section{margin-bottom:26px;}
+  .drawer-section:last-child{margin-bottom:0;}
+  .drawer-section > h4{
+    font-size:11.5px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.07em;
+    margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--gray-200);
+  }
+  .drawer-persona{display:flex;gap:14px;align-items:flex-start;}
+  .drawer-avatar{
+    width:52px;height:52px;border-radius:12px;background:var(--red-tint-08);color:var(--red);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex:0 0 52px;
+    font-family:'Be Vietnam Pro',sans-serif;
+  }
+  .drawer-persona-name{font-size:14.5px;font-weight:800;color:var(--ink);}
+  .drawer-persona-meta{font-size:12px;color:var(--ink-soft);margin-top:3px;line-height:1.5;}
+  .drawer-quote{
+    background:var(--gray-100);border-left:3px solid var(--red);padding:12px 16px;
+    font-style:italic;font-size:13.5px;color:var(--ink);border-radius:0 8px 8px 0;margin:12px 0 0;
+  }
+  .drawer-field{margin-bottom:14px;}
+  .drawer-field:last-child{margin-bottom:0;}
+  .df-lbl{font-size:11px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px;}
+  .drawer-field p{font-size:13.5px;margin:0;line-height:1.62;color:var(--ink-soft);}
+  .drawer-field ul li{font-size:13.5px;color:var(--ink-soft);padding-left:16px;position:relative;margin-bottom:6px;line-height:1.55;}
+  .drawer-field ul li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;background:var(--red);border-radius:50%;}
+  .drawer-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .drawer-stat{background:var(--gray-100);border-radius:8px;padding:10px 12px;}
+  .ds-lbl{font-size:10px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:.03em;}
+  .ds-val{font-size:12.5px;font-weight:700;color:var(--ink);margin-top:3px;line-height:1.4;}
+  .insight-hier{border:1px solid var(--red-tint-14);border-radius:var(--radius-sm);overflow:hidden;margin-bottom:14px;}
+  .insight-hier:last-child{margin-bottom:0;}
+  .insight-hier .ih-title{background:var(--red-tint-08);color:var(--red-dark);font-weight:800;font-size:12.5px;padding:10px 14px;}
+  .insight-hier .ih-row{padding:10px 14px;border-top:1px dashed var(--gray-300);}
+  .insight-hier .ih-row .ih-lbl{font-size:10px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px;}
+  .insight-hier .ih-row p{font-size:12.5px;margin:0;color:var(--ink-soft);line-height:1.55;}
+  .insight-hier .ih-row.final{background:var(--red-tint-05);}
+  .insight-hier .ih-row.final p{color:var(--red-dark);font-weight:600;}
+  @media (max-width:900px){
+    .seg2-grid{grid-template-columns:1fr;}
+    .drawer-stat-grid{grid-template-columns:1fr;}
+  }
+
+  /* ===== Segment module v2: profile cards + drawer ===== */
+  .seg-overview{font-size:14px;color:var(--ink-soft);margin-bottom:var(--s3);}
+  .seg-overview strong{color:var(--red);}
+
+  .profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);margin-bottom:var(--s3);}
+  .profile-card{
+    text-align:left;width:100%;border:1px solid var(--gray-300);border-radius:var(--radius);
+    padding:22px;background:#fff;cursor:pointer;transition:box-shadow .18s, transform .18s, border-color .18s;
+  }
+  .profile-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:var(--red-tint-14);}
+  .profile-card .pc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;}
+  .profile-card .pc-num{font-family:'Be Vietnam Pro',sans-serif;font-weight:900;font-size:22px;color:var(--red-tint-14);}
+  .profile-card .pc-pct{font-family:'Be Vietnam Pro',sans-serif;font-weight:900;font-size:26px;color:var(--red);}
+  .profile-card h4{font-size:16.5px;color:var(--ink);margin-bottom:10px;line-height:1.3;}
+  .profile-card .pc-persona{font-size:12.5px;color:var(--gray-600);margin-bottom:16px;}
+  .profile-card .pc-persona b{color:var(--ink-soft);font-weight:700;}
+  .profile-card .pc-cta{font-size:12.5px;font-weight:800;color:var(--red);display:flex;align-items:center;gap:6px;}
+
+  .group-block{
+    border:1px dashed var(--gray-400);border-radius:var(--radius);padding:20px 22px;
+    background:var(--gray-100);margin-bottom:var(--s2);cursor:pointer;transition:box-shadow .18s;
+    display:flex;align-items:center;gap:18px;flex-wrap:wrap;text-align:left;width:100%;
+  }
+  .group-block:hover{box-shadow:var(--shadow-sm);}
+  .group-block .gb-label{
+    flex:0 0 auto;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;
+    color:var(--gray-600);background:#fff;border:1px solid var(--gray-300);padding:5px 10px;border-radius:6px;
+  }
+  .group-block h4{font-size:15.5px;color:var(--ink);margin:0;flex:0 0 auto;}
+  .group-block p{font-size:12.5px;margin:0;color:var(--ink-soft);flex:1 1 220px;}
+  .group-block .pc-cta{font-size:12.5px;font-weight:800;color:var(--red);white-space:nowrap;}
+
+  /* Drawer */
+  .drawer-overlay{
+    position:fixed;inset:0;background:rgba(20,20,20,0.45);z-index:200;
+    opacity:0;visibility:hidden;transition:opacity .25s;
+  }
+  .drawer-overlay.open{opacity:1;visibility:visible;}
+  .profile-drawer{
+    position:fixed;top:0;right:0;height:100vh;width:min(560px,92vw);
+    background:#fff;z-index:201;box-shadow:-8px 0 30px rgba(0,0,0,0.18);
+    transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column;
+  }
+  .profile-drawer.open{transform:translateX(0);}
+  .drawer-header{
+    flex:0 0 auto;padding:22px 26px;background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;
+    display:flex;justify-content:space-between;align-items:flex-start;
+  }
+  .drawer-header .dh-tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;opacity:.85;margin-bottom:6px;}
+  .drawer-header h3{font-size:19px;color:#fff;margin-bottom:4px;}
+  .drawer-header .dh-pct{font-size:13px;opacity:.9;font-weight:700;}
+  .drawer-close{
+    background:rgba(255,255,255,0.18);border:none;color:#fff;width:32px;height:32px;border-radius:50%;
+    font-size:18px;cursor:pointer;line-height:1;flex:0 0 32px;
+  }
+  .drawer-body{flex:1 1 auto;overflow-y:auto;padding:24px 26px 60px;}
+  .dblock{margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid var(--gray-200);}
+  .dblock:last-child{border-bottom:none;}
+  .dblock h5{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--red);margin-bottom:12px;}
+  .dblock p{font-size:13.5px;color:var(--ink-soft);margin:0 0 8px;}
+  .dblock ul{display:flex;flex-direction:column;gap:6px;}
+  .dblock ul li{font-size:13px;color:var(--ink-soft);padding-left:16px;position:relative;line-height:1.5;}
+  .dblock ul li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;background:var(--red);border-radius:50%;}
+  .d-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .d-facts .fact{background:var(--gray-100);border-radius:8px;padding:10px 12px;}
+  .d-facts .fact .fl{font-size:10px;font-weight:800;text-transform:uppercase;color:var(--gray-600);margin-bottom:4px;}
+  .d-facts .fact .fv{font-size:12.5px;color:var(--ink);font-weight:600;line-height:1.4;}
+  .d-stars{color:var(--red);font-size:14px;letter-spacing:1px;}
+  .d-quote{background:var(--red-tint-05);border-left:3px solid var(--red);padding:12px 16px;border-radius:0 8px 8px 0;font-style:italic;font-size:13.5px;color:var(--ink);}
+  .d-two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .d-two .d-pos{border-left:3px solid #2C8C42;padding-left:12px;}
+  .d-two .d-neg{border-left:3px solid var(--red);padding-left:12px;}
+  .d-two h6{font-size:11px;font-weight:800;text-transform:uppercase;margin-bottom:8px;color:var(--ink-soft);}
+  @media (max-width:600px){
+    .profile-grid,.d-two,.d-facts{grid-template-columns:1fr;}
+  }
   .seg-card{
     border:1px solid var(--gray-300);border-radius:var(--radius);padding:22px;background:#fff;
     transition:transform .18s, box-shadow .18s;
@@ -650,7 +935,7 @@
 
   <div class="tab-intro">
     <span class="eyebrow">01</span>
-    <h2>Nghiên cứu thị trường &amp; khách hàng</h2>
+    <h2>Nghiên cứu thị trường</h2>
     <div class="rule"></div>
   </div>
 
@@ -708,99 +993,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Insight khach hang -->
-  <div class="section">
-    <div class="section-head"><h2>Phân tích Insight khách hàng</h2></div>
-    <p class="section-lead" style="margin-bottom:20px;">Bấm vào mỗi thẻ để xem insight ẩn sâu phía sau câu nói của khách hàng.</p>
-    <div class="insight-grid">
-      <div class="expand-card">
-        <div class="exp-head"><div><h4>Áp lực đồng lứa</h4><div class="preview">"Em muốn đi Đức học nghề để sớm tự lập tài chính, đỡ đần cha mẹ."</div></div><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <ul class="insight-points">
-            <li>Hoảng loạn trước ngưỡng cửa trưởng thành.</li>
-            <li>Đi Đức là một "lối thoát danh dự" để có vị thế xã hội hoành tráng hơn.</li>
-          </ul>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><div><h4>Khủng hoảng tuổi 25</h4><div class="preview">"Em muốn tìm kiếm cơ hội phát triển sự nghiệp và trải nghiệm cuộc sống."</div></div><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <ul class="insight-points">
-            <li>Kiệt quệ sinh học sau vài năm làm văn phòng (KPI, khói bụi).</li>
-            <li>Chạy trốn khỏi hiện tại trước cột mốc tuổi 30.</li>
-          </ul>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><div><h4>Nhu cầu kiểm soát</h4><div class="preview">"Cô chỉ muốn đầu tư cho con có tương lai vững chắc, an toàn."</div></div><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <ul class="insight-points">
-            <li>Nỗi sợ mất kết nối và cảm giác tội lỗi khi quá bảo bọc con.</li>
-            <li>Mua một "người mẹ thay thế" tại Đức để quản lý con.</li>
-          </ul>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><div><h4>Sợ bị "bào tiền"</h4><div class="preview">"Em muốn biết chi phí trọn gói có phát sinh gì không."</div></div><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <ul class="insight-points">
-            <li>Mất lòng tin sâu sắc vào hệ thống dịch vụ.</li>
-            <li>Tìm kiếm cảm giác an toàn tuyệt đối, không bị "dắt mũi".</li>
-          </ul>
-        </div></div>
-      </div>
-      <div class="expand-card" style="grid-column:1 / -1;">
-        <div class="exp-head"><div><h4>Sợ "mất mặt"</h4><div class="preview">"Em lo không biết mình có học nổi tiếng Đức để thi đậu B1 không."</div></div><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <ul class="insight-points">
-            <li>Nỗi sợ hãi sự phán xét của cộng đồng nếu thất bại trở về.</li>
-            <li>Sự phá sản về mặt danh dự của cả gia đình.</li>
-          </ul>
-        </div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Ngon ngu khach hang -->
-  <div class="section">
-    <div class="section-head"><h2>Ngôn ngữ khách hàng &amp; Kết luận chiến lược</h2></div>
-    <div class="two-col">
-      <div>
-        <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;">Tiếng lòng thực tế của khách hàng</h4>
-        <div class="pill-row" id="quotePills">
-          <button class="pill-btn active" data-cat="hoctieng">Học tiếng</button>
-          <button class="pill-btn" data-cat="hoso">Xử lý hồ sơ</button>
-          <button class="pill-btn" data-cat="cuocsong">Cuộc sống tại Đức</button>
-        </div>
-        <div class="quote-grid">
-          <div class="quote-card show" data-cat="hoctieng">"Tiếng Đức khó như quỷ, học mãi không vào, sợ nhất là chia đuôi tính từ với mấy cái giống đực cái trung."</div>
-          <div class="quote-card show" data-cat="hoctieng">"Sợ đi thi lại, tốn tiền mà nản, muốn tìm chỗ nào dạy mẹo hay cam kết đậu luôn cho đỡ lo."</div>
-          <div class="quote-card show" data-cat="hoctieng">"Học trên lớp thì hiểu mà ra gặp Tây là 'câm nín', sợ sang bển không nghe được người ta nói gì."</div>
-
-          <div class="quote-card" data-cat="hoso">"Lo nhất là bị ngâm hồ sơ, thấy mấy đứa bạn bay rồi mà mình vẫn kẹt ở đây, sốt ruột lắm."</div>
-          <div class="quote-card" data-cat="hoso">"Sợ đi thi lại, tốn tiền mà nản, muốn tìm chỗ nào dạy mẹo hay cam kết đậu luôn cho đỡ lo."</div>
-          <div class="quote-card" data-cat="hoso">"Học trên lớp thì hiểu mà ra gặp Tây là 'câm nín', sợ sang bển không nghe được người ta nói gì."</div>
-
-          <div class="quote-card" data-cat="cuocsong">"Sang đó có ai đón không? Có chỗ ở tử tế không hay lại bắt tự bơi?"</div>
-          <div class="quote-card" data-cat="cuocsong">"Sợ gặp phải trung tâm 'ma', đóng tiền xong rồi lặn mất tăm hoặc vẽ thêm chi phí phát sinh."</div>
-          <div class="quote-card" data-cat="cuocsong">"Sợ đi thi lại, tốn tiền mà nản, muốn tìm chỗ nào dạy mẹo hay cam kết đậu luôn cho đỡ lo."</div>
-        </div>
-      </div>
-
-      <div class="kicker-box">
-        <h4>Kết luận chiến lược</h4>
-        <h3>Triệt tiêu nỗi sợ bằng sự minh bạch và đồng hành</h3>
-        <ul>
-          <li><strong>Sòng phẳng tài chính:</strong> Triệt tiêu nỗi sợ bị "bào tiền".</li>
-          <li><strong>Bảo hiểm năng lực:</strong> Triệt tiêu nỗi sợ học dốt, thi rớt.</li>
-          <li><strong>Đồng hành hai đầu:</strong> Triệt tiêu nỗi sợ bơ vơ xứ người.</li>
-        </ul>
-        <div class="final-quote">"Du học nghề Đức 2026: Đường đi rõ ràng – Chi phí sòng phẳng – Học đến khi đậu."</div>
-      </div>
-    </div>
-  </div>
-
   <!-- Doi thu -->
   <div class="section">
     <div class="section-head"><h2>Phân tích đối thủ cạnh tranh</h2></div>
@@ -931,48 +1123,739 @@
 
   <div class="section">
     <div class="section-head"><h2>Phân khúc khách hàng chi tiết</h2></div>
-    <div class="seg-grid">
-      <div class="seg-card">
-        <div class="seg-ico"><svg class="ico"><use href="#i-cap"></use></svg></div>
-        <h4>1. Gen Z (18–22 tuổi)</h4>
-        <p>Học sinh vừa tốt nghiệp THPT, không muốn học Đại học tại VN. Sợ thất nghiệp, áp lực đồng lứa.</p>
-        <div class="kv">Kỳ vọng: đổi đời nhanh, có vị thế xã hội ("đi Châu Âu"), tự chủ tài chính sớm.</div>
+    <div class="seg-overview-note"><strong>4 phân khúc DHND chính</strong> + 2 nhóm xuyên suốt/ngách (Buying Group &amp; Nhóm ngách)</div>
+
+    <div class="persona-grid">
+      <div class="persona-card" data-drawer="drawer-hsthpt">
+        <div class="pc-top"><span class="pc-num">01</span></div>
+        <h4>Học sinh THPT</h4>
+        <div class="pc-percent">30%</div>
+        <div class="pc-persona-label">Persona</div>
+        <div class="pc-persona-name">Minh Anh</div>
+        <div class="pc-cta">Xem hồ sơ <span>&rarr;</span></div>
       </div>
-      <div class="seg-card">
-        <div class="seg-ico"><svg class="ico"><use href="#i-users"></use></svg></div>
-        <h4>2. Phụ huynh (45–55 tuổi)</h4>
-        <p>Sống tại đô thị hoặc tỉnh lân cận. Lo lắng con hư hỏng, sợ bị trung tâm lừa đảo/bào tiền.</p>
-        <div class="kv">Kỳ vọng: con có tương lai ổn định, an toàn; cần trung tâm uy tín, có người quản lý con tại Đức.</div>
+      <div class="persona-card" data-drawer="drawer-nguoitre">
+        <div class="pc-top"><span class="pc-num">02</span></div>
+        <h4>Người trẻ sau THPT</h4>
+        <div class="pc-percent">30%</div>
+        <div class="pc-persona-label">Persona</div>
+        <div class="pc-persona-name">Gia Huy</div>
+        <div class="pc-cta">Xem hồ sơ <span>&rarr;</span></div>
       </div>
-      <div class="seg-card">
-        <div class="seg-ico"><svg class="ico"><use href="#i-briefcase"></use></svg></div>
-        <h4>3. Người đi làm (23–28 tuổi)</h4>
-        <p>Nhân viên văn phòng kiệt sức (KPI, kẹt xe). Muốn chạy trốn hiện tại trước ngưỡng 30.</p>
-        <div class="kv">Kỳ vọng: môi trường sống văn minh, cơ hội phát triển sự nghiệp thực chất, trải nghiệm thế giới.</div>
+      <div class="persona-card" data-drawer="drawer-svchuyen">
+        <div class="pc-top"><span class="pc-num">03</span></div>
+        <h4>Sinh viên chuyển hướng</h4>
+        <div class="pc-percent">25%</div>
+        <div class="pc-persona-label">Persona</div>
+        <div class="pc-persona-name">Thảo Vy</div>
+        <div class="pc-cta">Xem hồ sơ <span>&rarr;</span></div>
       </div>
-      <div class="seg-card">
-        <div class="seg-ico"><svg class="ico"><use href="#i-wrench"></use></svg></div>
-        <h4>4. Lao động tự do</h4>
-        <p>Công nhân, lao động phổ thông muốn nâng cao thu nhập. Sợ cuộc sống bấp bênh tại VN.</p>
-        <div class="kv">Kỳ vọng: động lực kinh tế cực mạnh, muốn định cư lâu dài để bảo lãnh gia đình sau này.</div>
-      </div>
-      <div class="seg-card">
-        <div class="seg-ico"><svg class="ico"><use href="#i-pulse"></use></svg></div>
-        <h4>5. SV ngành Y / Kỹ thuật</h4>
-        <p>Đang học hoặc đã tốt nghiệp Cao đẳng/Đại học nhưng lương thấp, môi trường làm việc vất vả.</p>
-        <div class="kv">Kỳ vọng: nâng cao tay nghề chuẩn quốc tế, làm chủ công nghệ, hưởng mức lương xứng đáng.</div>
+      <div class="persona-card" data-drawer="drawer-nguoidilam">
+        <div class="pc-top"><span class="pc-num">04</span></div>
+        <h4>Người đi làm chuyển hướng</h4>
+        <div class="pc-percent">15%</div>
+        <div class="pc-persona-label">Persona</div>
+        <div class="pc-persona-name">Hoàng Nam</div>
+        <div class="pc-cta">Xem hồ sơ <span>&rarr;</span></div>
       </div>
     </div>
 
-    <h4 style="font-size:14px;margin:var(--s4) 0 16px;text-transform:uppercase;letter-spacing:.06em;color:var(--red);">Quy mô phân bổ</h4>
+
+    <div class="group-card" data-drawer="drawer-phuhuynh">
+      <span class="ico-badge" style="background:rgba(255,255,255,0.2);color:#fff;"><svg class="ico"><use href="#i-users"></use></svg></span>
+      <div class="gc-body">
+        <div class="gc-label">Buying Group</div>
+        <h4>Phụ huynh</h4>
+        <p>Nhóm ảnh hưởng xuyên suốt đến quyết định của 4 phân khúc DHND chính.</p>
+        <div class="chip-row"><span>Insight ẩn</span><span>Hành vi</span><span>Tension</span></div>
+      </div>
+      <div class="gc-cta">Xem hồ sơ <span>&rarr;</span></div>
+    </div>
+
+    <div class="group-card niche" data-drawer="drawer-visa18b">
+      <span class="ico-badge sm"><svg class="ico"><use href="#i-briefcase"></use></svg></span>
+      <div class="gc-body">
+        <div class="gc-label">Nhóm ngách</div>
+        <h4>Visa 18B</h4>
+        <p>Nhóm đối tượng riêng với nhu cầu / điều kiện đặc thù (hiện tập trung ngành Đầu bếp).</p>
+      </div>
+      <div class="gc-cta">Xem hồ sơ <span>&rarr;</span></div>
+    </div>
+
+    <div class="general-insight-card">
+      <div class="gi-label">Insight chung &middot; giai đoạn quyết định</div>
+      <h4>Nỗi sợ mình đang ra quyết định dựa trên thông tin chưa đầy đủ</h4>
+      <p>Càng gần quyết định, khách hàng càng không cần thêm lý do để mua; họ cần chắc chắn rằng mình không bỏ sót một lý do đủ lớn để không mua.</p>
+    </div>
+
+    <h4 style="font-size:14px;margin:var(--s4) 0 16px;text-transform:uppercase;letter-spacing:.06em;color:var(--red);">Quy mô phân bổ DHND</h4>
     <div class="barchart">
-      <div class="bar-row"><div class="label">Gen Z</div><div class="bar-track"><div class="bar-fill" style="width:94%;"></div></div><div class="val">33</div></div>
-      <div class="bar-row"><div class="label">Người đi làm</div><div class="bar-track"><div class="bar-fill" style="width:69%;"></div></div><div class="val">24</div></div>
-      <div class="bar-row"><div class="label">Phụ huynh</div><div class="bar-track"><div class="bar-fill" style="width:57%;"></div></div><div class="val">20</div></div>
-      <div class="bar-row"><div class="label">Lao động tự do</div><div class="bar-track"><div class="bar-fill" style="width:51%;"></div></div><div class="val">18</div></div>
-      <div class="bar-row"><div class="label">SV ngành Y</div><div class="bar-track"><div class="bar-fill" style="width:6%;"></div></div><div class="val">2</div></div>
+      <div class="bar-row"><div class="label">Học sinh THPT</div><div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div><div class="val">30%</div></div>
+      <div class="bar-row"><div class="label">Người trẻ sau THPT</div><div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div><div class="val">30%</div></div>
+      <div class="bar-row"><div class="label">Sinh viên chuyển hướng</div><div class="bar-track"><div class="bar-fill" style="width:83%;"></div></div><div class="val">25%</div></div>
+      <div class="bar-row"><div class="label">Người đi làm chuyển hướng</div><div class="bar-track"><div class="bar-fill" style="width:50%;"></div></div><div class="val">15%</div></div>
     </div>
   </div>
+
+  <div class="drawer-overlay" id="drawer-overlay" data-close-drawer></div>
+
+<div class="drawer" id="drawer-hsthpt">
+  <div class="drawer-head">
+    <button class="drawer-close" data-close-drawer>&times;</button>
+    <div class="dh-label">Phân khúc 01</div>
+    <h3>Học sinh THPT</h3>
+    <div class="dh-percent">Quy mô ước tính: 30%</div>
+  </div>
+  <div class="drawer-body">
+
+    <div class="drawer-persona-box">
+      <div class="avatar">M</div>
+      <div>
+        <div class="pb-name">MINH ANH - HỌC SINH THPT</div>
+        <div class="pb-sub">17 tuổi | Nữ | Học sinh lớp 12 | Gia đình thu nhập hạn chế</div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Chân dung</h5>
+      <p>Minh Anh đang đứng trước lựa chọn sau THPT nhưng chưa xác định chắc chắn Đại học có phải con đường phù hợp. Gia đình không quá dư dả nên bạn có ý thức khá rõ về chi phí học tập và mong muốn sớm có nghề nghiệp, tự lập.</p>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Tổng quan phân khúc</h5>
+      <div class="overview-mini">
+          <div class="om-item"><div class="lbl">Đối tượng chính</div><div class="val">HS lớp 10 - 12, đặc biệt lớp 11–12</div></div>
+          <div class="om-item"><div class="lbl">Đặc điểm nhân khẩu học</div><div class="val">16 - 18 tuổi, chưa có thu nhập, phụ thuộc gia đình; có thể thuộc nhóm gia đình có điều kiện hạn chế</div></div>
+          <div class="om-item"><div class="lbl">Nhu cầu chính</div><div class="val">Định hướng nghề nghiệp, tìm lộ trình sau THPT, chuẩn bị sớm cho tương lai</div></div>
+          <div class="om-item"><div class="lbl">Bối cảnh / vấn đề chính</div><div class="val">Chưa chắc mình muốn gì; áp lực chọn hướng sau THPT; với nhóm hoàn cảnh khó khăn, tài chính là rào cản lớn</div></div>
+          <div class="om-item"><div class="lbl">Mức sẵn sàng chi trả</div><div class="val">Thấp ở cá nhân / Trung bình - Cao ở gia đình</div></div>
+          <div class="om-item"><div class="lbl">Độ khó tiếp cận</div><div class="val">🟢 Dễ</div></div>
+          <div class="om-item"><div class="lbl">Mức ưu tiên</div><div class="val">⭐⭐⭐⭐⭐</div></div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Lối sống &amp; thói quen</h5>
+        <ul>
+          <li>Đi học, học thêm/tự học.</li>
+          <li>Dùng TikTok, Facebook, YouTube hàng ngày.</li>
+          <li>Xem video về du học, học nghề, cuộc sống Đức, nghề nghiệp.</li>
+          <li>Thích nội dung ngắn, trực quan, người thật.</li>
+          <li>Có xu hướng save/share thông tin trước khi hỏi bố mẹ.</li>
+          <li>Có thể làm thêm hoặc phụ giúp gia đình.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Ngôn ngữ khách hàng thật sự dùng</h5>
+      <div class="drawer-quote">“Em muốn có một tương lai tốt hơn nhưng không muốn trở thành gánh nặng của bố mẹ.”</div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Vấn đề lớn nhất</h5>
+        <ul>
+          <li>Chi phí.</li>
+          <li>Có được nhận lương khi học không?</li>
+          <li>Ngành nào phù hợp?</li>
+          <li>Tiếng Đức có khó không?</li>
+          <li>18 tuổi đi Đức có quá sớm không?</li>
+          <li>Sang Đức có được hỗ trợ không?</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Tìm giải pháp ở đâu</h5>
+      <p>TikTok → Facebook → YouTube → Google → người đã đi Đức</p>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Điều khiến quyết định</h5>
+        <ul>
+          <li>Lộ trình rõ.</li>
+          <li>Chi phí minh bạch.</li>
+          <li>Có người thật tương đồng hoàn cảnh.</li>
+          <li>Ngành nghề có đầu ra.</li>
+          <li>Có khả năng tự lập.</li>
+          <li>Phụ huynh đồng ý.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Điều khiến do dự</h5>
+        <ul>
+          <li>Tài chính gia đình.</li>
+          <li>Tiếng Đức.</li>
+          <li>Visa.</li>
+          <li>Sợ chọn sai ngành.</li>
+          <li>Sợ không thích nghi được.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Kênh MXH chính</h5>
+      <div class="chip-row"><span>TikTok</span><span>Facebook</span></div>
+    </div>
+
+      <div class="drawer-section">
+        <h5>Insight sâu</h5>
+        <div class="insight-topic">Nỗi sợ chọn sai tương lai</div>
+        <div class="insight-layer"><div class="il-label">Insight thực sự ẩn</div><p>Học sinh không thực sự sợ một con đường khó; các bạn sợ phải cam kết với một lựa chọn khi chưa đủ hiểu bản thân - vì nếu chọn sai, chính mình sẽ là người phải trả giá.</p></div>
+        <div class="insight-layer"><div class="il-label">Biểu hiện bề mặt</div><p>“Em chưa biết sau THPT nên học gì.” “Em không biết mình hợp nghề nào.”</p></div>
+        <div class="insight-layer"><div class="il-label">Hành vi</div><p>Xem nhiều nội dung về Đại học, học nghề, du học; hỏi bạn bè, bố mẹ; lưu nhiều thông tin nhưng vẫn trì hoãn quyết định.</p></div>
+        <div class="insight-layer"><div class="il-label">Tension ẩn</div><p>Bị buộc phải chọn hướng đi ở tuổi 16–18 trong khi chưa có đủ trải nghiệm để hiểu mình thực sự phù hợp với điều gì.</p></div>
+        <div class="insight-layer il-final"><div class="il-label">Hàm ý content</div><p>Đừng chỉ giới thiệu “ngành nào đang tuyển”. Hãy giúp các bạn hình dung bản thân trong từng lựa chọn, hiểu công việc thực tế, lộ trình phát triển và xem liệu mình có phù hợp trước khi quyết định.</p></div>
+
+        <div class="insight-topic">Nỗi sợ trở thành gánh nặng cho gia đình.</div>
+        <div class="insight-layer"><div class="il-label">Insight thực sự ẩn</div><p>Với một số học sinh có hoàn cảnh khó khăn, điều hấp dẫn ở Du học nghề Đức không chỉ là cơ hội sang Đức; đó là khả năng bắt đầu tự chịu trách nhiệm cho tương lai của mình sớm hơn.</p></div>
+        <div class="insight-layer"><div class="il-label">Biểu hiện bề mặt</div><p>“Nhà em không có điều kiện lắm.” / “Chi phí đi Đức có cao không?” / “Học có được nhận lương không?”</p></div>
+        <div class="insight-layer"><div class="il-label">Hành vi</div><p>Đặc biệt chú ý đến chi phí, các khoản phải chuẩn bị và thu nhập trong quá trình học; thường cân nhắc rất kỹ trước khi nói với bố mẹ.</p></div>
+        <div class="insight-layer"><div class="il-label">Tension ẩn</div><p>Muốn có tương lai tốt hơn nhưng đồng thời ý thức rằng gia đình không thể hỗ trợ mình vô thời hạn. Muốn tiến lên nhưng không muốn trở thành thêm một khoản phải lo.</p></div>
+        <div class="insight-layer il-final"><div class="il-label">Hàm ý content</div><p>Đừng biến insight thành “chi phí rẻ/lương cao”. Hãy kể hành trình tự lập: từ hoàn cảnh ban đầu → học nghề → có thu nhập → từng bước tự chủ; ưu tiên case có xuất phát điểm tương đồng.</p></div>
+      </div>
+
+  </div>
+</div>
+
+
+<div class="drawer" id="drawer-nguoitre">
+  <div class="drawer-head">
+    <button class="drawer-close" data-close-drawer>&times;</button>
+    <div class="dh-label">Phân khúc 02</div>
+    <h3>Người trẻ sau THPT</h3>
+    <div class="dh-percent">Quy mô ước tính: 30%</div>
+  </div>
+  <div class="drawer-body">
+
+    <div class="drawer-persona-box">
+      <div class="avatar">G</div>
+      <div>
+        <div class="pb-name">GIA HUY - VỪA TỐT NGHIỆP THPT/RỚT ĐẠI HỌC</div>
+        <div class="pb-sub">18–19 tuổi | Nam | Chưa đi làm ổn định | Gia đình trung bình</div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Chân dung</h5>
+      <p>Gia Huy vừa tốt nghiệp THPT. Có thể đã thi Đại học nhưng không đậu trường/ngành mong muốn, hoặc đậu nhưng không muốn học. Bạn đang có cảm giác bị chững lại trong khi bạn bè đã bắt đầu một hành trình mới. Đây là nhóm rất khác HS THPT vì quyết định “sau THPT” đã trở thành vấn đề cấp thiết.</p>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Tổng quan phân khúc</h5>
+      <div class="overview-mini">
+          <div class="om-item"><div class="lbl">Đối tượng chính</div><div class="val">Người vừa tốt nghiệp THPT, chưa đi làm ổn định; rớt/không chọn ĐH hoặc chưa xác định hướng đi</div></div>
+          <div class="om-item"><div class="lbl">Đặc điểm nhân khẩu học</div><div class="val">18 - 20 tuổi, thường vẫn phụ thuộc gia đình</div></div>
+          <div class="om-item"><div class="lbl">Nhu cầu chính</div><div class="val">Tìm một hướng đi rõ ràng sau THPT; có nghề và lộ trình sự nghiệp</div></div>
+          <div class="om-item"><div class="lbl">Bối cảnh / vấn đề chính</div><div class="val">Đứng trước “khoảng trống” sau THPT; cần quyết định nhanh nhưng sợ chọn sai lần nữa</div></div>
+          <div class="om-item"><div class="lbl">Mức sẵn sàng chi trả</div><div class="val">Trung bình - Cao ở gia đình</div></div>
+          <div class="om-item"><div class="lbl">Độ khó tiếp cận</div><div class="val">🟢 Dễ</div></div>
+          <div class="om-item"><div class="lbl">Mức ưu tiên</div><div class="val">⭐⭐⭐⭐⭐</div></div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Lối sống &amp; thói quen</h5>
+        <ul>
+          <li>Ở nhà hoặc làm thêm trong thời gian chờ quyết định. Dùng TikTok, Facebook, YouTube nhiều.</li>
+          <li>Tìm kiếm các nội dung kiểu:; “Không đậu Đại học thì làm gì?”; “Học nghề Đức”; “18 tuổi đi Đức”; “Ausbildung là gì?”; “Đi Đức hết bao nhiêu tiền?”</li>
+          <li>Quan tâm mạnh đến câu chuyện của người bằng tuổi.</li>
+          <li>Dễ bị tác động bởi social proof.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Ngôn ngữ khách hàng thật sự dùng</h5>
+      <div class="drawer-quote">“Mình không muốn một năm nữa vẫn đứng yên trong khi bạn bè đã đi tiếp.”</div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Vấn đề lớn nhất</h5>
+        <ul>
+          <li>Không muốn học Đại học chỉ để có bằng.</li>
+          <li>Sợ chọn một ngành khác rồi lại sai.</li>
+          <li>Lo bố mẹ thất vọng vì thi rớt.</li>
+          <li>Không biết học nghề Đức có phải lựa chọn tốt hơn không.</li>
+          <li>Cần một con đường cụ thể để bắt đầu.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Tìm giải pháp ở đâu</h5>
+      <p>TikTok → Facebook → YouTube → Google → hội nhóm Đặc biệt quan tâm case của người vừa tốt nghiệp THPT và đi Đức.</p>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Điều khiến quyết định</h5>
+        <ul>
+          <li>Nhìn thấy một con đường thay thế Đại học rõ ràng.</li>
+          <li>Có timeline cụ thể.</li>
+          <li>Có ngành nghề phù hợp.</li>
+          <li>Có lương khi học.</li>
+          <li>Có người thật cùng độ tuổi đã đi.</li>
+          <li>Gia đình đồng thuận.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Điều khiến do dự</h5>
+        <ul>
+          <li>Sợ “học nghề” bị đánh giá thấp.</li>
+          <li>Sợ tiếng Đức.</li>
+          <li>Sợ xa nhà.</li>
+          <li>Sợ bố mẹ không đồng ý.</li>
+          <li>Lo chi phí.</li>
+          <li>Lo chọn sai ngành lần nữa.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Kênh MXH chính</h5>
+      <div class="chip-row"><span>TikTok</span><span>Facebook</span><span>YouTube</span></div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="drawer" id="drawer-svchuyen">
+  <div class="drawer-head">
+    <button class="drawer-close" data-close-drawer>&times;</button>
+    <div class="dh-label">Phân khúc 03</div>
+    <h3>Sinh viên chuyển hướng</h3>
+    <div class="dh-percent">Quy mô ước tính: 25%</div>
+  </div>
+  <div class="drawer-body">
+
+    <div class="drawer-persona-box">
+      <div class="avatar">T</div>
+      <div>
+        <div class="pb-name">THẢO VY - SINH VIÊN CHUYỂN HƯỚNG</div>
+        <div class="pb-sub">21 tuổi | Nữ | Sinh viên năm 2–3 | Gia đình thu nhập trung bình</div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Chân dung</h5>
+      <p>Thảo Vy đang học CĐ/ĐH nhưng bắt đầu nhận ra ngành hiện tại không thực sự phù hợp với mình. Bạn đã đầu tư một khoảng thời gian và chi phí nhất định nên không dễ dàng đưa ra quyết định dừng lại. Tuy nhiên, càng học càng cảm thấy không nhìn thấy rõ công việc mình sẽ làm sau khi tốt nghiệp. Vy bắt đầu tìm hiểu Du học nghề Đức như một phương án chuyển hướng, nhưng cần chắc chắn rằng việc “rẽ sang một con đường khác” thực sự đáng hơn việc tiếp tục con đường hiện tại.</p>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Tổng quan phân khúc</h5>
+      <div class="overview-mini">
+          <div class="om-item"><div class="lbl">Đối tượng chính</div><div class="val">SV TC/CĐ/ĐH muốn đổi hướng</div></div>
+          <div class="om-item"><div class="lbl">Đặc điểm nhân khẩu học</div><div class="val">18 - 24 tuổi, đã đầu tư thời gian vào một ngành học</div></div>
+          <div class="om-item"><div class="lbl">Nhu cầu chính</div><div class="val">Tìm nghề phù hợp hơn, thực tế hơn, có đầu ra rõ</div></div>
+          <div class="om-item"><div class="lbl">Bối cảnh / vấn đề chính</div><div class="val">Nhận ra ngành hiện tại không phù hợp hoặc không nhìn thấy tương lai; tiếc thời gian đã đầu tư</div></div>
+          <div class="om-item"><div class="lbl">Mức sẵn sàng chi trả</div><div class="val">Trung bình - Cao</div></div>
+          <div class="om-item"><div class="lbl">Độ khó tiếp cận</div><div class="val">🟡 Trung bình</div></div>
+          <div class="om-item"><div class="lbl">Mức ưu tiên</div><div class="val">⭐⭐⭐⭐</div></div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Lối sống &amp; thói quen</h5>
+        <ul>
+          <li>Đi học, có thể làm thêm hoặc tham gia hoạt động ngoại khóa. Dùng Facebook, TikTok, YouTube hàng ngày.</li>
+          <li>Có thói quen Google những vấn đề liên quan đến nghề nghiệp, việc làm.</li>
+          <li>Xem review, case thực tế và hỏi người từng trải trước khi quyết định.</li>
+          <li>Thường trao đổi với bạn bè trước khi nói chuyện nghiêm túc với gia đình.</li>
+          <li>Có xu hướng cân nhắc rất lâu trước những quyết định liên quan đến học tập.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Ngôn ngữ khách hàng thật sự dùng</h5>
+      <div class="drawer-quote">“Mình đã học đến đây rồi, nếu bỏ thì tiếc. Nhưng học tiếp một ngành mình không muốn thì càng tiếc thời gian.”</div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Vấn đề lớn nhất</h5>
+        <ul>
+          <li>Ngành hiện tại có thực sự phù hợp không?</li>
+          <li>Nếu chuyển hướng thì có phải bắt đầu lại từ đầu?</li>
+          <li>Thời gian đã học có bị lãng phí?</li>
+          <li>Học nghề ở Đức có tốt hơn học tiếp?</li>
+          <li>Sau khi học xong sẽ làm công việc gì?</li>
+          <li>Gia đình có ủng hộ không?</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Tìm giải pháp ở đâu</h5>
+      <p>Google → YouTube → Facebook → TikTok → cộng đồng sinh viên/du học → người đã đi Đức</p>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Điều khiến quyết định</h5>
+        <ul>
+          <li>Nhìn thấy lợi ích của việc chuyển hướng lớn hơn chi phí đã bỏ ra.</li>
+          <li>Có nghề cụ thể và đầu ra rõ ràng.</li>
+          <li>Được giải thích minh bạch về lộ trình từ hiện tại đến khi sang Đức.</li>
+          <li>Có người từng ở hoàn cảnh tương tự và đã chuyển hướng thành công.</li>
+          <li>Có thể hình dung rõ công việc và cuộc sống sau khi tốt nghiệp.</li>
+          <li>Gia đình hiểu và đồng thuận.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Điều khiến do dự</h5>
+        <ul>
+          <li>Tiếc thời gian đã học.</li>
+          <li>Sợ quyết định mới lại sai.</li>
+          <li>Gia đình phản đối vì “đã học rồi thì học cho xong”.</li>
+          <li>Lo phải học tiếng Đức từ đầu.</li>
+          <li>Sợ không thích nghi được với môi trường mới.</li>
+          <li>Lo thông tin từ trung tâm khác với thực tế.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Kênh MXH chính</h5>
+      <div class="chip-row"><span>Facebook</span><span>YouTube</span></div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="drawer" id="drawer-nguoidilam">
+  <div class="drawer-head">
+    <button class="drawer-close" data-close-drawer>&times;</button>
+    <div class="dh-label">Phân khúc 04</div>
+    <h3>Người đi làm chuyển hướng</h3>
+    <div class="dh-percent">Quy mô ước tính: 15%</div>
+  </div>
+  <div class="drawer-body">
+
+    <div class="drawer-persona-box">
+      <div class="avatar">H</div>
+      <div>
+        <div class="pb-name">HOÀNG NAM - NGƯỜI ĐI LÀM CHUYỂN HƯỚNG</div>
+        <div class="pb-sub">27 tuổi | Nam | Nhân viên văn phòng/kỹ thuật/dịch vụ | Thu nhập 12–18 triệu/tháng</div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Chân dung</h5>
+      <p>Hoàng Nam đã đi làm vài năm và có thu nhập tương đối ổn định. Tuy nhiên, công việc hiện tại không mang lại cho Nam cảm giác đang tiến về đâu. Thu nhập tăng chậm, cơ hội phát triển hạn chế và càng làm lâu càng thấy khó thay đổi. Khác với một học sinh hay sinh viên, Nam không thể quyết định chỉ vì “muốn có tương lai tốt hơn”. Anh đang có thu nhập, các mối quan hệ và trách nhiệm cá nhân. Vì vậy, để bỏ công việc hiện tại và sang Đức, cơ hội mới phải đủ đáng để đánh đổi.</p>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Tổng quan phân khúc</h5>
+      <div class="overview-mini">
+          <div class="om-item"><div class="lbl">Đối tượng chính</div><div class="val">Người đã đi làm muốn học nghề/chuyển hướng sang Đức</div></div>
+          <div class="om-item"><div class="lbl">Đặc điểm nhân khẩu học</div><div class="val">22 - 30+, đã có kinh nghiệm và thu nhập</div></div>
+          <div class="om-item"><div class="lbl">Nhu cầu chính</div><div class="val">Tìm một hướng nghề nghiệp/cơ hội tốt hơn, ổn định hơn</div></div>
+          <div class="om-item"><div class="lbl">Bối cảnh / vấn đề chính</div><div class="val">Đã có công việc nhưng không hài lòng với triển vọng; phải cân nhắc chi phí cơ hội khi bắt đầu lại</div></div>
+          <div class="om-item"><div class="lbl">Mức sẵn sàng chi trả</div><div class="val">Cao</div></div>
+          <div class="om-item"><div class="lbl">Độ khó tiếp cận</div><div class="val">🔴 Khó</div></div>
+          <div class="om-item"><div class="lbl">Mức ưu tiên</div><div class="val">⭐⭐⭐</div></div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Lối sống &amp; thói quen</h5>
+        <ul>
+          <li>Làm việc toàn thời gian, phần lớn thời gian trong ngày dành cho công việc.</li>
+          <li>Online chủ yếu vào buổi tối hoặc cuối tuần. Dùng Facebook, YouTube và Google nhiều hơn TikTok.</li>
+          <li>Có thói quen tìm hiểu độc lập trước, ít hỏi người khác ngay từ đầu.</li>
+          <li>Quan tâm đến thu nhập, nghề nghiệp, môi trường sống và cơ hội phát triển.</li>
+          <li>Có thể đã có trách nhiệm tài chính với gia đình hoặc người thân.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Ngôn ngữ khách hàng thật sự dùng</h5>
+      <div class="drawer-quote">“Tôi đang có một công việc, vậy điều gì đủ đáng để tôi bỏ nó và bắt đầu lại?”</div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Vấn đề lớn nhất</h5>
+        <ul>
+          <li>Sang Đức thì thu nhập thực tế thế nào?</li>
+          <li>Nghề nào phù hợp với mình?</li>
+          <li>Mất bao lâu để có thể đi?</li>
+          <li>Có phải bỏ việc hiện tại ngay không?</li>
+          <li>Sau khi sang Đức có cơ hội phát triển không?</li>
+          <li>Tổng chi phí và khả năng hoàn vốn thế nào?</li>
+          <li>Ở tuổi này bắt đầu lại có muộn không?</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Tìm giải pháp ở đâu</h5>
+      <p>Google → YouTube → Facebook → Website chương trình → cộng đồng nghề nghiệp → người đã đi Đức</p>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Điều khiến quyết định</h5>
+        <ul>
+          <li>Nhìn thấy bài toán lợi ích đủ lớn so với công việc hiện tại.</li>
+          <li>Lộ trình rõ ràng, có thể tính toán được thời gian và chi phí.</li>
+          <li>Nghề nghiệp và đầu ra cụ thể.</li>
+          <li>Thông tin về thu nhập, công việc và điều kiện minh bạch.</li>
+          <li>Case thực tế của những người đã đi làm rồi mới sang Đức.</li>
+          <li>Có thể hình dung được con đường phát triển dài hạn, không chỉ “sang Đức để kiếm tiền”.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Điều khiến do dự</h5>
+        <ul>
+          <li>Chi phí cơ hội khi bỏ công việc hiện tại.</li>
+          <li>Mất nguồn thu nhập trong thời gian chuẩn bị.</li>
+          <li>Lo tuổi không còn phù hợp.</li>
+          <li>Trách nhiệm gia đình.</li>
+          <li>Sợ bắt đầu lại từ đầu.</li>
+          <li>Lo tiếng Đức và khả năng thích nghi.</li>
+          <li>Sợ kỳ vọng về Đức cao hơn thực tế.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Kênh MXH chính</h5>
+      <div class="chip-row"><span>Facebook</span><span>YouTube</span></div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="drawer" id="drawer-phuhuynh">
+  <div class="drawer-head">
+    <button class="drawer-close" data-close-drawer>&times;</button>
+    <div class="dh-label">Buying Group</div>
+    <h3>Phụ huynh</h3>
+    <div class="dh-percent">Quy mô ước tính: Không tính độc lập - xuyên suốt 4 nhóm DHND</div>
+  </div>
+  <div class="drawer-body">
+
+    <div class="drawer-persona-box">
+      <div class="avatar">C</div>
+      <div>
+        <div class="pb-name">CHỊ LAN - PHỤ HUYNH</div>
+        <div class="pb-sub">45 tuổi | Nữ | Nhân viên văn phòng/kinh doanh nhỏ | Thu nhập gia đình 20–35 triệu/tháng</div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Chân dung</h5>
+      <p>Chị Lan có con 16 - 20 tuổi. Con đang tìm hiểu Du học nghề Đức và gửi thông tin cho chị. Chị không nhất thiết là người phát hiện chương trình đầu tiên, nhưng là người kiểm chứng và quyết định có nên đầu tư hay không.</p>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Tổng quan phân khúc</h5>
+      <div class="overview-mini">
+          <div class="om-item"><div class="lbl">Đối tượng chính</div><div class="val">Cha mẹ của người học 16–24 tuổi</div></div>
+          <div class="om-item"><div class="lbl">Đặc điểm nhân khẩu học</div><div class="val">Thường 40–55 tuổi, có thu nhập và khả năng chi trả</div></div>
+          <div class="om-item"><div class="lbl">Nhu cầu chính</div><div class="val">Tìm một lựa chọn an toàn, minh bạch, có tương lai cho con</div></div>
+          <div class="om-item"><div class="lbl">Bối cảnh / vấn đề chính</div><div class="val">Lo về chi phí, chất lượng chương trình, khả năng thích nghi của con và rủi ro khi con đi xa</div></div>
+          <div class="om-item"><div class="lbl">Mức sẵn sàng chi trả</div><div class="val">Cao, nếu đủ niềm tin</div></div>
+          <div class="om-item"><div class="lbl">Độ khó tiếp cận</div><div class="val">🟡 Trung bình</div></div>
+          <div class="om-item"><div class="lbl">Mức ưu tiên</div><div class="val">⭐⭐⭐⭐⭐</div></div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Lối sống &amp; thói quen</h5>
+        <ul>
+          <li>Đi làm, chăm sóc gia đình.</li>
+          <li>Online chủ yếu vào buổi tối.</li>
+          <li>Dùng Facebook thường xuyên.</li>
+          <li>Có thể xem TikTok nhưng không phải kênh tìm hiểu chính.</li>
+          <li>Khi quan tâm một trung tâm, thường:; Google tên trung tâm.; Xem fanpage.; Đọc bình luận.; Xem feedback.; Hỏi người quen.; Sau đó mới liên hệ tư vấn.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Ngôn ngữ khách hàng thật sự dùng</h5>
+      <div class="drawer-quote">“Tôi không cần con đi Đức bằng mọi giá. Tôi cần biết đây có phải lựa chọn tốt, an toàn và đáng để đầu tư cho tương lai của con hay không.”</div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Vấn đề lớn nhất</h5>
+        <ul>
+          <li>Tổng chi phí.</li>
+          <li>Các khoản phát sinh.</li>
+          <li>Điều kiện.</li>
+          <li>Visa.</li>
+          <li>Học gì?</li>
+          <li>Sau này làm gì?</li>
+          <li>Con có thích nghi không?</li>
+          <li>Sang Đức ai hỗ trợ?</li>
+          <li>Trung tâm có đáng tin không?</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Tìm giải pháp ở đâu</h5>
+      <p>Facebook → Google → YouTube → người quen → cộng đồng phụ huynh</p>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Điều khiến quyết định</h5>
+        <ul>
+          <li>Niềm tin; minh bạch; bằng chứng. Đặc biệt:</li>
+          <li>Chi phí rõ.</li>
+          <li>Quy trình rõ.</li>
+          <li>Đối tác rõ.</li>
+          <li>Học viên thật.</li>
+          <li>Hình ảnh thật tại Đức.</li>
+          <li>Có hỗ trợ sau khi sang.</li>
+          <li>Tư vấn đúng năng lực của con, không cố ép đăng ký.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Điều khiến do dự</h5>
+        <ul>
+          <li>Sợ mất tiền.</li>
+          <li>Sợ visa không đạt.</li>
+          <li>Sợ con không thích nghi.</li>
+          <li>Sợ con bỏ cuộc.</li>
+          <li>Sợ thông tin tư vấn không đúng thực tế.</li>
+          <li>Sợ xa con.</li>
+          <li>Sợ nghề nghiệp sau này không ổn định.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Kênh MXH chính</h5>
+      <div class="chip-row"><span>Facebook → YouTube → Google</span></div>
+    </div>
+
+      <div class="drawer-section">
+        <h5>Insight sâu</h5>
+        <div class="insight-topic">Nỗi sợ của cha mẹ về việc buông tay nhưng mất khả năng bảo vệ con</div>
+        <div class="insight-layer"><div class="il-label">Insight thực sự ẩn</div><p>Phụ huynh không thực sự muốn giữ con ở bên mình; họ muốn biết rằng khi buông tay cho con đi, họ vẫn không mất hoàn toàn khả năng bảo vệ con.</p></div>
+        <div class="insight-layer"><div class="il-label">Biểu hiện bề mặt</div><p>“Qua đó ai lo cho con?” / “Nếu có chuyện thì sao?” / “Trung tâm có hỗ trợ không?”</p></div>
+        <div class="insight-layer"><div class="il-label">Hành vi</div><p>Tìm kiếm trên Google/Facebook, xem review, hỏi người quen, kiểm tra học viên thật và tìm nhiều nguồn trước khi đồng ý.</p></div>
+        <div class="insight-layer"><div class="il-label">Tension ẩn</div><p>Muốn con trưởng thành và có tương lai riêng nhưng việc con sang Đức đồng nghĩa với việc họ không còn khả năng chăm sóc, xử lý vấn đề và kiểm soát trực tiếp như trước.</p></div>
+        <div class="insight-layer il-final"><div class="il-label">Hàm ý content</div><p>Không chỉ nói “PNE hỗ trợ học viên”. Cần cho thấy PNE hỗ trợ cụ thể trong những tình huống thật: trước khi bay, khi mới sang, khi học nghề, khi gặp khó khăn… để phụ huynh hình dung được “con tôi sẽ được chăm sóc thế nào”.</p></div>
+      </div>
+
+  </div>
+</div>
+
+
+<div class="drawer" id="drawer-visa18b">
+  <div class="drawer-head">
+    <button class="drawer-close" data-close-drawer>&times;</button>
+    <div class="dh-label">Nhóm ngách</div>
+    <h3>Visa 18B</h3>
+    <div class="dh-percent">Quy mô ước tính: Nhóm ngách hiện tại, có thể mở rộng khi thêm ngành</div>
+  </div>
+  <div class="drawer-body">
+
+    <div class="drawer-persona-box">
+      <div class="avatar">A</div>
+      <div>
+        <div class="pb-name">ANH TUÂN — ĐẦU BẾP CÓ KINH NGHIỆM</div>
+        <div class="pb-sub">29 tuổi | Nam | Tốt nghiệp Đại học I Đang làm nghề Đầu bếp | Thu nhập khoảng 12–25 triệu/tháng</div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Chân dung</h5>
+      <p>Tuấn không phải người đang chủ động tìm “Visa 18B”. Anh đang tìm kiếm một cơ hội để: - Tăng thu nhập; - Có môi trường làm việc tốt hơn; - Có cơ hội phát triển nghề nghiệp; - Thay đổi môi trường sống; - Tìm một hướng đi dài hạn tại Đức. Ban đầu, anh có thể chỉ nghĩ: “Có cơ hội nào sang Đức làm việc phù hợp với kinh nghiệm của mình không?” Sau khi tìm hiểu mới biết chương trình Visa tay nghề 18B – Đầu bếp có thể là một lựa chọn.</p>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Tổng quan phân khúc</h5>
+      <div class="overview-mini">
+          <div class="om-item"><div class="lbl">Đối tượng chính</div><div class="val">Người đã có bằng cấp/kinh nghiệm phù hợp với vị trí tuyển dụng; hiện tại PNE tập trung Đầu bếp</div></div>
+          <div class="om-item"><div class="lbl">Đặc điểm nhân khẩu học</div><div class="val">Chủ yếu người trưởng thành đã có kinh nghiệm nghề; điều kiện cụ thể tùy từng chương trình/ngành</div></div>
+          <div class="om-item"><div class="lbl">Nhu cầu chính</div><div class="val">Sang Đức đi làm ngay, tận dụng năng lực/kinh nghiệm hiện có</div></div>
+          <div class="om-item"><div class="lbl">Bối cảnh / vấn đề chính</div><div class="val">Không muốn đi theo hướng DHND; quan tâm một cơ hội làm việc thực tế, dài hạn tại Đức</div></div>
+          <div class="om-item"><div class="lbl">Mức sẵn sàng chi trả</div><div class="val">Trung bình - Cao</div></div>
+          <div class="om-item"><div class="lbl">Độ khó tiếp cận</div><div class="val">🔴 Khó</div></div>
+          <div class="om-item"><div class="lbl">Mức ưu tiên</div><div class="val">⭐⭐⭐</div></div>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Lối sống &amp; thói quen</h5>
+        <ul>
+          <li>Tuấn đã đi làm nên không có nhiều thời gian tìm hiểu như học sinh . Trong ngày</li>
+          <li>Đi làm theo ca.</li>
+          <li>Thời gian online chủ yếu vào buổi tối hoặc lúc nghỉ.</li>
+          <li>Sử dụng điện thoại để giải trí và tìm kiếm cơ hội việc làm. Nội dung thường xem</li>
+          <li>Việc làm tại Đức.</li>
+          <li>Lương người Việt tại Đức.</li>
+          <li>Cuộc sống ở Đức.</li>
+          <li>Nghề Bếp tại Đức.</li>
+          <li>Nhà hàng/khách sạn Đức.</li>
+          <li>Người Việt sang Đức làm việc.</li>
+          <li>Kinh nghiệm xin visa.</li>
+          <li>Review công việc thực tế. Anh không nhất thiết biết “Visa 18B” là gì trước khi thấy quảng cáo .</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Ngôn ngữ khách hàng thật sự dùng</h5>
+      <div class="drawer-quote">“Tôi đã đi làm vài năm nhưng thu nhập và cơ hội phát triển hiện tại chưa khiến tôi thấy hài lòng. Tôi muốn tìm một cơ hội tốt hơn mà không phải bỏ hết những gì mình đã tích lũy.”</div>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Vấn đề lớn nhất</h5>
+        <ul>
+          <li>Không muốn bắt đầu lại từ đầu.</li>
+          <li>Không muốn bỏ nghề.</li>
+          <li>Không muốn mất nhiều năm đi học lại.</li>
+          <li>Không muốn sang Đức theo con đường mà mình không hiểu rõ.</li>
+          <li>Muốn đi làm và có thu nhập, thay vì tiếp tục học lý thuyết.</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Tìm giải pháp ở đâu</h5>
+      <p>Facebook → Google → Website</p>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Điều khiến quyết định</h5>
+        <ul>
+          <li>Được đi làm ngay</li>
+          <li>Không phải bỏ phí kinh nghiệm</li>
+          <li>Thu nhập hấp dẫn hơn</li>
+          <li>Công việc và doanh nghiệp cụ thể, không nói chung chung “có nhiều cơ hội việc làm”.</li>
+          <li>Điều kiện hồ sơ rõ</li>
+          <li>Có người thật đã đi</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Điều khiến do dự</h5>
+        <ul>
+          <li>Có đủ điều kiện không?</li>
+          <li>Sang đó công việc có giống quảng cáo không?</li>
+          <li>Tiếng Đức cần đến mức nào?</li>
+          <li>Nếu bbỏ công việc hiện tại rồi hồ sơ không thành công thì sao?</li>
+          <li>Tổng chi phí là bao nhiêu?</li>
+          <li>Đây có phải chương trình học nghề trá hình không?</li>
+        </ul>
+    </div>
+
+    <div class="drawer-section">
+      <h5>Kênh MXH chính</h5>
+      <div class="chip-row"><span>TikTok</span><span>Facebook</span></div>
+    </div>
+
+      <div class="drawer-section">
+        <h5>Insight sâu</h5>
+        <div class="insight-topic">Nỗi sợ của người đi làm về việc những gì đã tích lũy trở nên vô giá trị</div>
+        <div class="insight-layer"><div class="il-label">Insight thực sự ẩn</div><p>Khách hàng Visa 18B không chỉ tìm một nơi có thu nhập tốt hơn; họ tìm một cơ hội để những gì mình đã tích lũy vẫn có giá trị khi bước sang một thị trường mới.</p></div>
+        <div class="insight-layer"><div class="il-label">Biểu hiện bề mặt</div><p>“Sang Đức có được đi làm ngay không?” / “Kinh nghiệm Bếp của tôi có được tính không?” / “Tôi không muốn học lại.”</p></div>
+        <div class="insight-layer"><div class="il-label">Hành vi</div><p>Kiểm tra kỹ điều kiện bằng Đại học, kinh nghiệm Bếp, công việc, doanh nghiệp, hợp đồng và thu nhập; thường so sánh với những con đường sang Đức khác.</p></div>
+        <div class="insight-layer"><div class="il-label">Tension ẩn</div><p>Muốn thay đổi môi trường và nâng chất lượng cuộc sống nhưng không muốn xóa bỏ những năm đã đầu tư cho nghề nghiệp để trở thành người bắt đầu từ số 0.</p></div>
+        <div class="insight-layer il-final"><div class="il-label">Hàm ý content</div><p>Không truyền thông 18B như một phiên bản khác của “du học”. Nhấn mạnh giá trị kinh nghiệm hiện tại + đi làm ngay + doanh nghiệp đào tạo trong quá trình làm việc, đồng thời làm rõ điều kiện để khách tự đánh giá mình có phù hợp.</p></div>
+      </div>
+
+  </div>
+</div>
+
 
   <div class="section">
     <div class="section-head"><h2>Định vị thương hiệu PNE</h2></div>
@@ -995,14 +1878,15 @@
 
     <div class="two-col">
       <div class="card-plain">
-        <h4>Lớp bổ trợ Năng lực đào tạo & triển khai</h4>
+        <h4>Lớp bổ trợ cảm xúc — Sự sòng phẳng và quyền tự chủ cuộc đời</h4>
         <ul>
-          <li><strong>Lộ trình đào tạo bám sát thực tế, định hướng rõ đầu ra tiếng Đức và kỹ năng làm việc.</li>
-          <li><strong>Quy trình hướng dẫn và luyện phỏng vấn với doanh nghiệp được chuẩn hóa.</li>
+          <li><strong>Người giải phóng áp lực:</strong> Lộ trình thực tế, sòng phẳng về tiền bạc.</li>
+          <li><strong>Tôn trọng sự tự lập:</strong> Trả lại quyền tự quyết tương lai cho học viên.</li>
+          <li><strong>Đồng hành tin cậy:</strong> Thương hiệu 15 năm uy tín tại thị trường phía Nam.</li>
         </ul>
       </div>
       <div class="card-plain">
-        <h4>Lớp bổ trợ Bảo chứng từ kết quả & hệ thống vận hành</h4>
+        <h4>Lớp bổ trợ bằng chứng — Bảo chứng uy tín từ những con số biết nói</h4>
         <ul>
           <li><strong>15 năm kinh nghiệm:</strong> Uy tín được khẳng định qua hàng ngàn học viên.</li>
           <li><strong>Trạm thi chính thức:</strong> Được Sở GD&amp;ĐT cấp phép hoạt động.</li>
@@ -1057,633 +1941,398 @@
   </div>
 
   <div class="section">
-    <div class="section">
-  <div class="section-head"><h2>Bảng đối chiếu độ bao phủ phân khúc khách hàng</h2></div>
-  <div class="gap-grid">
-    <div class="gap-card">
-      <div class="gap-head"><div class="idx">1</div><h4>Học sinh THPT</h4></div>
-      <div class="gap-body">
-        <div class="gap-row"><div class="lbl">Tình trạng bao phủ</div><p>Được tiếp cận gián tiếp qua nội dung ngành nghề, lợi ích học nghề, học viên bay/đậu visa và các Reels lan tỏa.</p></div>
-        <div class="gap-row"><div class="lbl">Đánh giá</div><p>Có bao phủ, nhưng còn đại trà.</p></div>
-        <div class="gap-row msg"><div class="lbl">Khoảng trống cần bổ sung</div><p>Thiếu nội dung hướng nghiệp trước quyết định: chọn nghề theo tính cách, học lực, sức khỏe, khả năng tiếng và hoàn cảnh tài chính.</p></div>
+    <div class="section-head"><h2>Nhóm đối tượng bị bỏ trống &amp; giải pháp</h2></div>
+    <div class="two-col">
+      <div class="card-plain">
+        <h4 class="heading-with-icon"><span class="ico-badge sm"><svg class="ico"><use href="#i-user"></use></svg></span> Nhóm đối tượng đang bị bỏ trống</h4>
+        <ul>
+          <li><strong>Nhóm Phụ huynh cần sự an tâm tài chính:</strong> Những người nắm giữ ngân sách nhưng chưa thấy được sự minh bạch tuyệt đối về phí.</li>
+          <li><strong>Nhóm Kỹ thuật &amp; IT:</strong> Những người trẻ thực tế, yêu công nghệ nhưng thấy nội dung hiện tại quá "mềm mỏng", thiếu tính Tech.</li>
+          <li><strong>Nhóm Lao động muốn đổi đời bền vững:</strong> Cần những bảng so sánh thu nhập thực tế và lộ trình định cư rõ ràng.</li>
+          <li><strong>Nhóm Sinh viên ngành Y:</strong> Cần thấy được concept "Smart Nursing" để cảm thấy nghề Điều dưỡng là danh giá.</li>
+        </ul>
       </div>
-    </div>
-    <div class="gap-card">
-      <div class="gap-head"><div class="idx">2</div><h4>Người trẻ sau THPT</h4></div>
-      <div class="gap-body">
-        <div class="gap-row"><div class="lbl">Tình trạng bao phủ</div><p>Được chạm qua thông điệp lộ trình đi Đức, miễn học phí, trợ cấp/lương thực tập, ngành nghề và kết quả học viên.</p></div>
-        <div class="gap-row"><div class="lbl">Đánh giá</div><p>Bao phủ tương đối tốt nhưng chưa đủ theo bối cảnh.</p></div>
-        <div class="gap-row msg"><div class="lbl">Khoảng trống cần bổ sung</div><p>Thiếu nội dung riêng cho người vừa tốt nghiệp, rớt đại học, không muốn học đại học hoặc đang mất phương hướng.</p></div>
-      </div>
-    </div>
-    <div class="gap-card">
-      <div class="gap-head"><div class="idx">3</div><h4>Sinh viên chuyển hướng</h4></div>
-      <div class="gap-body">
-        <div class="gap-row"><div class="lbl">Tình trạng bao phủ</div><p>Có thể được chạm gián tiếp qua nội dung ngành nghề và cơ hội tại Đức, nhưng chưa có tuyến nội dung riêng cho người muốn đổi hướng.</p></div>
-        <div class="gap-row"><div class="lbl">Đánh giá</div><p>Bao phủ chưa đủ / gần như bị bỏ trống về insight.</p></div>
-        <div class="gap-row msg"><div class="lbl">Khoảng trống cần bổ sung</div><p>Xử lý nỗi tiếc thời gian đã đầu tư và chứng minh việc chuyển hướng có đáng hay không.</p></div>
-      </div>
-    </div>
-    <div class="gap-card">
-      <div class="gap-head"><div class="idx">4</div><h4>Người đi làm chuyển hướng</h4></div>
-      <div class="gap-body">
-        <div class="gap-row"><div class="lbl">Tình trạng bao phủ</div><p>Nội dung chung về cơ hội nghề nghiệp tại Đức có thể tạo nhận biết, nhưng chưa nói trực tiếp với người đang có thu nhập, trách nhiệm và chi phí cơ hội.</p></div>
-        <div class="gap-row"><div class="lbl">Đánh giá</div><p>Bỏ trống rõ nhất.</p></div>
-        <div class="gap-row msg"><div class="lbl">Khoảng trống cần bổ sung</div><p>Thiếu ngôn ngữ trưởng thành, lớp học ca tối/linh hoạt, phân tích chi phí cơ hội, hồ sơ nghề, thời gian chuyển đổi và lộ trình không cần nghỉ việc ngay.</p></div>
+      <div class="card-plain">
+        <h4 class="heading-with-icon"><span class="ico-badge sm"><svg class="ico"><use href="#i-bulb"></use></svg></span> Giải pháp đột phá nội dung</h4>
+        <ul>
+          <li><strong>Tuyến bài "Góc Phụ Huynh":</strong> Series giải đáp về an toàn, quản lý học viên tại Đức và cam kết tài chính sòng phẳng.</li>
+          <li><strong>Series "Tech-Talk Du Học":</strong> Phân tích xu hướng công nghệ Đức, cơ hội việc làm ngành EV và IT.</li>
+          <li><strong>Xây dựng series nội dung "Lộ trình từ A0 đến Visa":</strong> Hình dung rõ các bước, thời gian và kết quả mong đợi.</li>
+          <li><strong>Show "Người thật - Việc thật":</strong> Hình ảnh học viên đang ở Đức để review thực tế.</li>
+          <li><strong>Chiến dịch "Smart Nursing":</strong> Tái định vị ngành Điều dưỡng qua lăng kính công nghệ y tế hiện đại.</li>
+        </ul>
       </div>
     </div>
   </div>
-</div>
-
-<div class="section">
-  <div class="section-head"><h2>Chiến thuật nội dung &amp; Lead Magnet</h2></div>
-
-<h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;"><span class="ico-badge sm"><svg class="ico"><use href="#i-calendar"></use></svg></span> Phân bổ theo tuần</h4>
-  <p class="section-lead" style="margin:0 0 16px;">Nguyên tắc phân bổ: Mô hình 3P (Push – Prove – Persuade)</p>
-  <div class="phase-grid" style="margin-bottom:var(--s3);">
-    <div class="phase-card">
-      <span class="phase-tag">Push · Thúc đẩy</span>
-      <h4>Đầu tuần</h4>
-      <div class="phase-days">
-        <div class="phase-day-row"><div class="d">T2 </div><div class="p">Định hướng nghề nghiệp &amp; Lộ trình</div></div>
-        <div class="phase-day-row"><div class="d">T3 </div><div class="p">Nước Đức &amp; Công việc thực tế <em>(hoặc Prove)</em></div></div>
-      </div>
-    </div>
-    <div class="phase-card">
-      <span class="phase-tag">Prove · Chứng minh</span>
-      <h4>Giữa tuần</h4>
-      <div class="phase-days">
-        <div class="phase-day-row"><div class="d">T4 </div><div class="p">Tiếng Đức thực tế &amp; Năng lực đầu ra <em>(hoặc Push)</em></div></div>
-        <div class="phase-day-row"><div class="d">T5 </div><div class="p">Người thật – Hành trình thật tại Đức / Minh bạch Lộ trình, Dịch vụ &amp; Hồ sơ</div></div>
-        <div class="phase-day-row"><div class="d">T7 </div><div class="p">Người thật – Hành trình thật tại Đức</div></div>
-      </div>
-    </div>
-    <div class="phase-card">
-      <span class="phase-tag">Persuade · Thuyết phục</span>
-      <h4>Cuối tuần</h4>
-      <div class="phase-days">
-        <div class="phase-day-row"><div class="d">CN </div><div class="p">Chương trình tuyển sinh &amp; Cơ hội tại PNE</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="golden-hour"><span class="ico-inline"><svg class="ico"><use href="#i-clock"></use></svg></span>Reels: đăng 20:00–21:00 hàng ngày (giờ vàng thuật toán) · Bài có Lead Magnet: đăng sáng T3/T5 (09:00–10:00) để tư vấn viên xử lý ngay trong ngày.</div>
-
-  <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin:var(--s3) 0 14px;"><span class="ico-badge sm"><svg class="ico"><use href="#i-gift"></use></svg></span> Đề xuất Lead Magnet</h4>
-  <div class="mini-grid">
-    <div class="mini-card">
-      <div class="mini-tag">Học sinh THPT</div>
-      <h5>Quiz</h5>
-      <p>"Bạn hợp ngành nghề Đức nào?" + bản đồ lộ trình sau THPT</p>
-    </div>
-    <div class="mini-card">
-      <div class="mini-tag">Người trẻ sau THPT</div>
-      <h5>Checklist</h5>
-      <p>90 ngày sau tốt nghiệp: từ chưa biết hướng đi đến hồ sơ sẵn sàng</p>
-    </div>
-    <div class="mini-card">
-      <div class="mini-tag">Sinh viên chuyển hướng</div>
-      <h5>Bộ đánh giá</h5>
-      <p>"Lộ trình hiện tại còn phù hợp với mục tiêu của bạn không?"</p>
-    </div>
-    <div class="mini-card">
-      <div class="mini-tag">Người đi làm chuyển hướng</div>
-      <h5>Calculator</h5>
-      <p>Chi phí cơ hội khi chuyển nghề sang Đức + lộ trình học ca tối</p>
-    </div>
-    <div class="mini-card">
-      <div class="mini-tag">Phụ huynh</div>
-      <h5>Checklist</h5>
-      <p>25 điểm thẩm định trung tâm du học nghề Đức</p>
-    </div>
-    <div class="mini-card">
-      <div class="mini-tag">Nhóm lao động tay nghề</div>
-      <h5>Form đánh giá</h5>
-      <p>Bằng cấp và kinh nghiệm nghề</p>
-    </div>
-  </div>
-</div>
 
   <div class="section">
-  <div class="section-head"><h2>07 Content Pillars 2026</h2></div>
+    <div class="section-head"><h2>Chiến thuật nội dung &amp; Lead Magnet</h2></div>
 
-  <div class="angle-group-title" style="margin-top:0;">Định hướng &amp; Con người thật</div>
-  <div class="pillar-grid" style="margin-bottom:var(--s3);">
-    <div class="pillar-card">
-      <div class="pico"><svg class="ico"><use href="#i-bulb"></use></svg></div>
-      <h4>1. Định hướng nghề nghiệp &amp; Lộ trình</h4>
-      <p>Giúp khách hiểu bản thân, hiểu nghề và hiểu lộ trình, biết lựa chọn phù hợp thay vì chọn theo phong trào; cho thấy các bước cần chuẩn bị để đi Đức.</p>
-      <div class="tags"><span>20% · 4 bài/tháng</span></div>
+    <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;"><span class="ico-badge sm"><svg class="ico"><use href="#i-calendar"></use></svg></span> Phân bổ theo tuần</h4>
+    <p class="section-lead" style="margin:0 0 16px;">Nguyên tắc phân bổ: Mô hình 3P (Push – Prove – Persuade)</p>
+    <div class="phase-grid" style="margin-bottom:var(--s3);">
+      <div class="phase-card">
+        <span class="phase-tag">Push · Thúc đẩy / Kêu gọi</span>
+        <h4>Đầu tuần</h4>
+        <div class="phase-days">
+          <div class="phase-day-row"><div class="d">Thứ 2</div><div class="p">Pillar 7: Góc Định Hướng (MBTI, Giải tỏa áp lực)</div></div>
+          <div class="phase-day-row"><div class="d">Thứ 3</div><div class="p">Pillar 5: Lớp Học &amp; Lộ Trình Đào Tạo (B1/B2, Phương pháp)</div></div>
+        </div>
+      </div>
+      <div class="phase-card">
+        <span class="phase-tag">Prove · Chứng minh</span>
+        <h4>Giữa tuần</h4>
+        <div class="phase-days">
+          <div class="phase-day-row"><div class="d">Thứ 4</div><div class="p">Pillar 1: Mưa Visa &amp; Bằng Chứng Uy Tín</div></div>
+          <div class="phase-day-row"><div class="d">Thứ 5</div><div class="p">Pillar 4: Trạm Thi ÖSD &amp; Cơ Sở Vật Chất</div></div>
+          <div class="phase-day-row"><div class="d">Thứ 6</div><div class="p">Pillar 6: Nhật Ký Hồ Sơ &amp; Pháp Lý Minh Bạch</div></div>
+        </div>
+      </div>
+      <div class="phase-card">
+        <span class="phase-tag">Persuade · Thuyết phục</span>
+        <h4>Cuối tuần</h4>
+        <div class="phase-days">
+          <div class="phase-day-row"><div class="d">Thứ 7</div><div class="p">Pillar 2: Nhật Ký Sân Bay &amp; Sự Đồng Hành</div></div>
+          <div class="phase-day-row"><div class="d">Chủ nhật</div><div class="p">Pillar 3: Cuộc Sống Du Học Sinh Tại Đức</div></div>
+        </div>
+      </div>
     </div>
-    <div class="pillar-card">
-      <div class="pico"><svg class="ico"><use href="#i-users"></use></svg></div>
-      <h4>2. Người thật – Hành trình thật tại Đức</h4>
-      <p>Kể hành trình thật của học viên từ học, thi, visa, bay, nhà ở đến cuộc sống/làm việc tại Đức; dùng case và asset thực tế để khách tự kiểm chứng.</p>
-      <div class="tags"><span>20% · 4 bài/tháng</span></div>
+    <div class="golden-hour"><span class="ico-inline"><svg class="ico"><use href="#i-clock"></use></svg></span>Khung giờ vàng: Reels (20:00–21:00) · Lead Magnet (09:00–10:00 Thứ 3/Thứ 5)</div>
+
+    <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin:var(--s3) 0 14px;"><span class="ico-badge sm"><svg class="ico"><use href="#i-gift"></use></svg></span> Đề xuất Lead Magnet</h4>
+    <div class="mini-grid four">
+      <div class="mini-card">
+        <div class="mini-tag">Gen Z &amp; Người đi làm</div>
+        <h5>Ebook</h5>
+        <p>"Lộ trình thăng tiến và định cư Đức sau 5 năm"</p>
+      </div>
+      <div class="mini-card">
+        <div class="mini-tag">Phụ huynh</div>
+        <h5>Checklist</h5>
+        <p>"10 điều phụ huynh cần kiểm tra trước khi chọn trung tâm du học"</p>
+      </div>
+      <div class="mini-card">
+        <div class="mini-tag">Lao động tự do</div>
+        <h5>Bảng so sánh</h5>
+        <p>"Thu nhập thực tế Du học nghề Đức"</p>
+      </div>
+      <div class="mini-card">
+        <div class="mini-tag">Người muốn đổi đời</div>
+        <h5>Cẩm nang</h5>
+        <p>"Chi phí sinh hoạt và cách tiết kiệm €500/tháng tại Đức"</p>
+      </div>
     </div>
   </div>
-
-  <div class="angle-group-title">Cơ hội &amp; Thực tế tại Đức</div>
-  <div class="pillar-grid" style="margin-bottom:var(--s3);">
-    <div class="pillar-card">
-      <div class="pico"><svg class="ico"><use href="#i-briefcase"></use></svg></div>
-      <h4>3. Chương trình tuyển sinh &amp; Cơ hội tại PNE</h4>
-      <p>Giới thiệu cơ hội PNE đang tuyển: ngành, chương trình, doanh nghiệp/đơn hàng, điều kiện, mức lương, kỳ tuyển sinh, đối tượng phù hợp và CTA.</p>
-      <div class="tags"><span>20% · 4 bài/tháng</span></div>
-    </div>
-    <div class="pillar-card">
-      <div class="pico"><svg class="ico"><use href="#i-globe"></use></svg></div>
-      <h4>4. Nước Đức &amp; Công việc thực tế</h4>
-      <p>Cho khách nhìn nước Đức đúng thực tế: nghề nghiệp, môi trường làm việc, thu nhập, nhà ở, sinh hoạt đến yêu cầu và khó khăn cần chuẩn bị.</p>
-      <div class="tags"><span>15% · 3 bài/tháng</span></div>
-    </div>
-    <div class="pillar-card">
-      <div class="pico"><svg class="ico"><use href="#i-monitor"></use></svg></div>
-      <h4>5. Tiếng Đức thực tế &amp; Năng lực đầu ra</h4>
-      <p>Nói về tiếng Đức phục vụ trực tiếp cho hành trình: học, thi ÖSD, giao tiếp và sử dụng trong công việc; thể hiện năng lực đầu ra cần có.</p>
-      <div class="tags"><span>10% · 2 bài/tháng</span></div>
-    </div>
-  </div>
-
-  <div class="angle-group-title">Uy tín &amp; Minh bạch PNE</div>
-  <div class="pillar-grid">
-    <div class="pillar-card">
-      <div class="pico"><svg class="ico"><use href="#i-award"></use></svg></div>
-      <h4>6. Bằng chứng &amp; Năng lực thực thi PNE</h4>
-      <p>Chứng minh PNE có hệ thống thực hiện trọn hành trình: tư vấn → đào tạo → thi ÖSD → hồ sơ → visa; thể hiện qua quy trình, đội ngũ, Trạm thi và kết quả.</p>
-      <div class="tags"><span>10% · 2 bài/tháng</span></div>
-    </div>
-    <div class="pillar-card">
-      <div class="pico"><svg class="ico"><use href="#i-file"></use></svg></div>
-      <h4>7. Minh bạch Lộ trình, Chi phí &amp; Hồ sơ</h4>
-      <p>"Mở" những thông tin cần biết trước khi quyết định: chi phí, hợp đồng dịch vụ, timeline, hồ sơ, visa, khoản phát sinh, điều kiện và rủi ro thực tế.</p>
-      <div class="tags"><span>5% · 1 bài/tháng</span></div>
-    </div>
-  </div>
-</div>
 
   <div class="section">
-  <div class="section-head"><h2>Phân bổ Content Pillar</h2></div>
-  <div class="card-plain">
-    <div class="barchart">
-      <div class="bar-row"><div class="label">1. Định hướng nghề nghiệp &amp; Lộ trình</div><div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div><div class="val">20%</div></div>
-      <div class="bar-row"><div class="label">2. Người thật – Hành trình thật tại Đức</div><div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div><div class="val">20%</div></div>
-      <div class="bar-row"><div class="label">3. Chương trình tuyển sinh &amp; Cơ hội tại PNE</div><div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div><div class="val">20%</div></div>
-      <div class="bar-row"><div class="label">4. Nước Đức &amp; Công việc thực tế</div><div class="bar-track"><div class="bar-fill" style="width:75%;"></div></div><div class="val">15%</div></div>
-      <div class="bar-row"><div class="label">5. Tiếng Đức thực tế &amp; Năng lực đầu ra</div><div class="bar-track"><div class="bar-fill" style="width:50%;"></div></div><div class="val">10%</div></div>
-      <div class="bar-row"><div class="label">6. Bằng chứng &amp; Năng lực thực thi PNE</div><div class="bar-track"><div class="bar-fill" style="width:50%;"></div></div><div class="val">10%</div></div>
-      <div class="bar-row"><div class="label">7. Minh bạch Lộ trình, Dịch vụ &amp; Hồ sơ</div><div class="bar-track"><div class="bar-fill" style="width:25%;"></div></div><div class="val">5%</div></div>
+    <div class="section-head"><h2>07 Content Pillars 2026</h2></div>
+
+    <div class="angle-group-title" style="margin-top:0;">Du học sinh thực tế</div>
+    <div class="pillar-grid" style="margin-bottom:var(--s3);">
+      <div class="pillar-card">
+        <div class="pico"><svg class="ico"><use href="#i-award"></use></svg></div>
+        <h4>1. Du học sinh nhận Visa</h4>
+        <p>Bằng chứng đanh thép chứng minh năng lực xử lý hồ sơ chuẩn xác, ra Visa đúng lộ trình, không trễ kỳ bay.</p>
+        <div class="tags"><span>#MưaVisaĐức</span><span>#CaseStudyHồSơ</span><span>#KếtQuảThựcTế</span><span>#HồSơKhóVẫnRa</span></div>
+      </div>
+      <div class="pillar-card">
+        <div class="pico"><svg class="ico"><use href="#i-plane"></use></svg></div>
+        <h4>2. Tiễn sân bay du học sinh</h4>
+        <p>Thể hiện trách nhiệm đồng hành trọn vẹn tại sân bay, chạm vào cảm xúc gia đình và sự an tâm của phụ huynh.</p>
+        <div class="tags"><span>#VlogTiễnBay</span><span>#CheckinTânSơnNhất</span><span>#CảmXúcPhụHuynh</span><span>#ChecklistHànhLý</span></div>
+      </div>
+      <div class="pillar-card">
+        <div class="pico"><svg class="ico"><use href="#i-globe"></use></svg></div>
+        <h4>3. Du học sinh tại Đức</h4>
+        <p>Cập nhật cuộc sống, học tập, nhà ở thực tế của học viên tại Đức.</p>
+        <div class="tags"><span>#HomeTourNhàỞĐức</span><span>#ReviewCuộcSốngĐức</span><span>#1NgàyĐiHọcĐiLàm</span><span>#AnCưTạiĐức</span></div>
+      </div>
     </div>
-    <div class="callout-strip" style="margin-top:var(--s2);"><strong>Tổng: 100%</strong> (20 bài/tháng)</div>
+
+    <div class="angle-group-title">Uy tín &amp; hoạt động PNE</div>
+    <div class="pillar-grid" style="margin-bottom:var(--s3);">
+      <div class="pillar-card">
+        <div class="pico"><svg class="ico"><use href="#i-landmark"></use></svg></div>
+        <h4>4. Trạm thi ÖSD chính thức tại TP.HCM</h4>
+        <p>Đóng đinh USP, nhấn mạnh lợi thế tâm lý thi tại chỗ và tính chủ động lịch thi cho học viên.</p>
+        <div class="tags"><span>#TrạmThiÖSD</span><span>#LợiThếPhòngThi</span><span>#LịchThiMớiNhất</span><span>#ĐặcQuyềnPNEers</span></div>
+      </div>
+      <div class="pillar-card">
+        <div class="pico"><svg class="ico"><use href="#i-monitor"></use></svg></div>
+        <h4>5. Chứng chỉ tiếng Đức B1/B2 &amp; học tiếng Đức</h4>
+        <p>Bảo chứng chất lượng đào tạo đỗ ÖSD 97,3%, trao giá trị bài học ngắn và tạo phễu thu data lớp học thử / App AI.</p>
+        <div class="tags"><span>#BảngVàngB1B2</span><span>#HọcThửMiễnPhí</span><span>#MẹoThiÖSD</span><span>#AppPNEHubAI</span></div>
+      </div>
+      <div class="pillar-card">
+        <div class="pico"><svg class="ico"><use href="#i-file"></use></svg></div>
+        <h4>6. Nhật ký hồ sơ &amp; Tư vấn tại VP</h4>
+        <p>Thể hiện sự tấp nập tại văn phòng, quy trình làm việc tận tâm và tính minh bạch pháp lý/hợp đồng trước khi xuất cảnh.</p>
+        <div class="tags"><span>#TưVấn1:1</span><span>#HợpĐồngVềTay</span><span>#TiếnĐộHồSơ</span><span>#NhậtKýVănPhòng</span></div>
+      </div>
+    </div>
+
+    <div class="angle-group-title">Chuyển đổi &amp; cảm xúc</div>
+    <div class="pillar-grid">
+      <div class="pillar-card" style="max-width:none;">
+        <div class="pico"><svg class="ico"><use href="#i-bulb"></use></svg></div>
+        <h4>7. Góc Định Hướng: Tâm Lý &amp; Hướng Nghiệp 4.0</h4>
+        <p>Giải tỏa áp lực Gen Z, xoa dịu lo âu phụ huynh; định hướng chọn ngành theo tính cách/MBTI và xu hướng nghề 4.0 tại Đức.</p>
+        <div class="tags"><span>#HướngNghiệpMBTI</span><span>#GỡRàoCảnTâmLý</span><span>#SmartNursing40</span><span>#KỹThuậtXanhIT</span></div>
+      </div>
+    </div>
   </div>
-</div>
 
   <div class="section">
-  <div class="section-head"><h2>Chi tiết Content Angle truyền thông 2026</h2></div>
-  <p class="section-lead" style="margin-bottom:24px;">Bấm vào từng angle để xem cách tiếp cận, tiêu đề gợi ý và điểm nhấn truyền thông.</p>
-
-  <div class="angle-group">
-    <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-bulb"></use></svg></div>Pillar 1: Định hướng nghề nghiệp &amp; Lộ trình</div>
-    <div class="angle-cards">
-      <div class="expand-card">
-        <div class="exp-head"><h4>Hiểu mình trước khi chọn nghề</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Self-check, quiz, checklist.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Bạn có thực sự phù hợp với Du học nghề Đức? 5 câu hỏi nên tự trả lời trước khi quyết định.</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Không phải ai cũng phù hợp; chọn đúng bắt đầu từ hiểu bản thân.</p></div>
-        </div></div>
+    <div class="section-head"><h2>USP &amp; phân bổ Content Pillar</h2></div>
+    <div class="two-col">
+      <div class="card-plain">
+        <ul>
+          <li><span class="ico-inline"><svg class="ico"><use href="#i-landmark"></use></svg></span><strong>Trạm thi ÖSD chính thức tại TP.HCM:</strong> Học, thi và nhận chứng chỉ tại chỗ.</li>
+          <li><span class="ico-inline"><svg class="ico"><use href="#i-award"></use></svg></span><strong>Bảo chứng chất lượng đào tạo</strong> với 97,3% học viên đỗ ÖSD lần đầu.</li>
+          <li><span class="ico-inline"><svg class="ico"><use href="#i-file"></use></svg></span><strong>Cam kết minh bạch,</strong> đảm bảo không phát sinh chi phí.</li>
+          <li><span class="ico-inline"><svg class="ico"><use href="#i-bulb"></use></svg></span><strong>An tâm tuyệt đối</strong> cùng thương hiệu 15 năm khép kín duy nhất tại TP.HCM.</li>
+        </ul>
       </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Chọn nghề theo năng lực &amp; tính cách</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Phân tích từng nhóm tính cách/năng lực.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Hướng nội có phù hợp với nghề Điều dưỡng tại Đức?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Đừng chọn nghề chỉ vì đang "hot"; hãy chọn nghề phù hợp với mình.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Chọn nghề theo mục tiêu tương lai</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>So sánh các nghề theo lộ trình phát triển.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Muốn có nghề ổn định và cơ hội làm việc lâu dài tại Đức, nên cân nhắc gì khi chọn nghề?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Nghề là một phần của kế hoạch tương lai, không chỉ là lựa chọn để được đi Đức.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Không chọn nghề theo phong trào</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Phân tích sai lầm, myth-busting.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>3 lý do bạn không nên chọn nghề chỉ vì thấy nhiều người đang đi.</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Đi đúng nghề quan trọng hơn đi nhanh.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Chuyển hướng không phải bắt đầu lại từ đầu</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Case + phân tích lộ trình.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Đã học Đại học nhưng không hợp ngành: Có quá muộn để chuyển hướng sang Đức?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Những gì đã học/làm có thể trở thành lợi thế khi xây lộ trình mới.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Lộ trình từ hiện tại đến ngày bay</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Roadmap, timeline.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Từ hôm nay đến ngày bay Đức: Bạn cần đi qua những bước nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Biến một mục tiêu lớn thành các bước cụ thể, có thể kiểm soát.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Định hướng theo từng hoàn cảnh</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Scenario-based content.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>18 tuổi chưa biết mình muốn làm gì: Nên bắt đầu từ đâu?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Không có một lộ trình chung cho tất cả mọi người.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Kiểm tra tính khả thi trước khi quyết định</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Checklist điều kiện.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Trước khi đăng ký Du học nghề Đức, hãy kiểm tra 7 điều này.</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Quyết định dựa trên thông tin và mức độ phù hợp, không dựa trên cảm xúc.</p></div>
-        </div></div>
+      <div class="card-plain">
+        <h4 style="margin-bottom:16px;">Tỷ lệ phân bổ pillar</h4>
+        <div class="barchart">
+          <div class="bar-row"><div class="label">1. Du học sinh nhận Visa</div><div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div><div class="val">15%</div></div>
+          <div class="bar-row"><div class="label">2. Tiễn sân bay du học sinh</div><div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div><div class="val">15%</div></div>
+          <div class="bar-row"><div class="label">3. Du học sinh tại Đức</div><div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div><div class="val">15%</div></div>
+          <div class="bar-row"><div class="label">4. Trạm thi ÖSD tại TP.HCM</div><div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div><div class="val">15%</div></div>
+          <div class="bar-row"><div class="label">5. Chứng chỉ B1/B2 &amp; lớp tiếng Đức</div><div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div><div class="val">15%</div></div>
+          <div class="bar-row"><div class="label">6. Nhật ký hồ sơ &amp; Tư vấn tại VP</div><div class="bar-track"><div class="bar-fill" style="width:67%;"></div></div><div class="val">10%</div></div>
+          <div class="bar-row"><div class="label">7. Góc Định Hướng &amp; Hướng nghiệp 4.0</div><div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div><div class="val">15%</div></div>
+        </div>
+        <div class="callout-strip" style="margin-top:var(--s2);"><strong>Tổng: 100%</strong> (20 bài/tháng)</div>
       </div>
     </div>
   </div>
 
-  <div class="angle-group">
-    <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-users"></use></svg></div>Pillar 2: Người thật – Hành trình thật tại Đức</div>
-    <div class="angle-cards">
-      <div class="expand-card">
-        <div class="exp-head"><h4>Hành trình từ Việt Nam đến Đức</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Storytelling theo timeline.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Từ lớp học tiếng đến ngày cầm visa Đức: Hành trình của [Tên học viên].</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Cho thấy kết quả không tự nhiên xuất hiện mà đến từ cả một hành trình.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Khoảnh khắc nhận visa</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Real-time update, photo story.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Cầm visa trên tay sau bao ngày chờ đợi – [Tên] đã sẵn sàng sang Đức.</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Bằng chứng kết quả thực tế.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Ngày tiễn sân bay</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Emotional storytelling.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Ngày bố mẹ tiễn con sang Đức: Một hành trình mới chính thức bắt đầu.</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Chạm cảm xúc học viên và phụ huynh.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Cuộc sống sau khi sang Đức</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Follow-up học viên.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Sau 3 tháng tại Đức, cuộc sống của [Tên] thực sự như thế nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Không chỉ chứng minh "đi được" mà chứng minh cuộc sống sau khi đi.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Nhà ở &amp; những ngày đầu</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Photo/video tour.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Đây là nơi học viên PNE bắt đầu cuộc sống tại Đức.</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Giảm nỗi lo về nơi ở và cuộc sống ban đầu.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Case chuyển hướng</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Before-after case.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>27 tuổi, đã đi làm 4 năm – vì sao [Tên] vẫn quyết định sang Đức?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Chạm nỗi sợ bắt đầu lại từ đầu.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Góc nhìn phụ huynh</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Interview/testimonial.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Điều bố mẹ lo nhất trước ngày con sang Đức là gì?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Social proof từ người có quyền ảnh hưởng đến quyết định.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Thử thách thật trong hành trình</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Case xử lý vấn đề.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Khi hồ sơ gặp vướng mắc, hành trình của học viên được xử lý thế nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Tăng độ tin cậy bằng năng lực giải quyết vấn đề, không chỉ khoe thành tích.</p></div>
-        </div></div>
+
+  <div class="section">
+    <div class="section-head"><h2>Chi tiết Content Angle truyền thông 2026</h2></div>
+    <p class="section-lead" style="margin-bottom:24px;">Bấm vào từng angle để xem cách tiếp cận, tiêu đề gợi ý và điểm nhấn truyền thông.</p>
+
+    <div class="angle-group">
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-award"></use></svg></div>Pillar 1: Du học sinh nhận Visa</div>
+      <div class="angle-cards">
+        <div class="expand-card">
+          <div class="exp-head"><h4>Mưa Visa về làng – Kết quả thực tế đợt bay mới</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Đăng album/clip ngắn khoe tập Visa Đức mới đáp về văn phòng PNE, tạo hiệu ứng thị giác về một trung tâm luôn tấp nập và thành công.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>[Tự hào PNE-ers] Tấm vé định cư Đức đã chính thức gọi tên... 🇩🇪✈️</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Năng lực bảo chứng: Visa về đều đặn, không bị ngâm, học viên PNE cầm chắc tấm vé sang Đức đúng lộ trình.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Khoảnh khắc bùng nổ cảm xúc – Phỏng vấn ngắn tại văn phòng</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Short video ghi lại nét mặt vỡ òa, nụ cười của học viên và phụ huynh ngay giây phút lên PNE nhận lại hộ chiếu đã dán Visa.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Giây phút cầm tấm Visa Đức trên tay: Bù đắp ngọt ngào cho những đêm cày tiếng Đức chăm chỉ 🥹</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Thành quả xứng đáng: Sự đồng hành của PNE giúp ước mơ của học viên trở thành hiện thực một cách trọn vẹn.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Visa "khó" vẫn ra – Năng lực giải cứu hồ sơ</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Case study bóc tách câu chuyện một học viên từng gặp trục trặc (gap year lớn, tài chính phức tạp, từng rớt Visa ở nơi khác) được PNE gỡ rối.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Hồ sơ từng bị từ chối / trôi kỳ: PNE đã "giải cứu" tấm Visa Đức cho bạn [Tên] như thế nào? 📑</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Chuyên môn xử lý: Đội ngũ chuyên gia PNE am hiểu luật pháp lý du học Đức, giải quyết triệt để các bộ hồ sơ khó.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Tốc độ ra Visa chuẩn lộ trình – Không trễ kỳ nhập học</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Đăng hình ảnh Visa kèm mốc thời gian từ lúc nộp đến lúc nhận, nhấn mạnh quy trình làm việc chuẩn mực không rủi ro.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Làm hồ sơ du học nghề Đức tại PNE: Đúng quy trình, chuẩn giấy tờ, Visa về mượt mà không cần bổ sung! ⏱️</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>An tâm tiến độ: Hồ sơ được chuẩn hóa 100% từ đầu, giúp Đại sứ quán duyệt nhanh và không tốn thời gian bổ sung.</p></div>
+          </div></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="angle-group">
-    <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-briefcase"></use></svg></div>Pillar 3: Chương trình tuyển sinh &amp; Cơ hội tại PNE</div>
-    <div class="angle-cards">
-      <div class="expand-card">
-        <div class="exp-head"><h4>Cơ hội đang có</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Recruitment update.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>PNE đang tuyển những chương trình Du học nghề Đức nào trong tháng này?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Cập nhật cơ hội thật, rõ điều kiện và timeline.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Match người – chương trình</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Quiz/segmentation.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Bạn phù hợp với chương trình Du học nghề nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Tuyển sinh dựa trên mức độ phù hợp, không phải ai cũng phù hợp với mọi chương trình.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Giải mã một chương trình</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Full journey.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Từ điều kiện đầu vào đến ngày bay: Đây là lộ trình của chương trình X.</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Giúp khách hiểu toàn bộ cơ hội trước khi đăng ký.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Hợp đồng nghề thật</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Highlight contract.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Hợp đồng nghề X có gì đáng chú ý?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Mức lương, thời gian, điều kiện và những điểm cần hiểu trước khi quyết định.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Ai nên/không nên đăng ký</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Qualification.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Chương trình X phù hợp với ai – và ai không nên đăng ký?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Tăng trust bằng sự sàng lọc thay vì cố bán cho tất cả.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Kỳ nhập học &amp; deadline</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Timeline.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Muốn bay kỳ X, bạn cần bắt đầu chuẩn bị từ khi nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Tạo urgency dựa trên timeline thật.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Case gắn với chương trình</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Case + recruitment.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Học viên [Tên] đã đi Đức theo chương trình này như thế nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Kết hợp social proof với tuyển sinh.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Tư vấn lựa chọn</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>CTA mềm.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Chưa biết chọn chương trình nào? Hãy bắt đầu từ việc xác định nghề phù hợp.</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>CTA chuyển đổi nhưng vẫn xuất phát từ nhu cầu khách.</p></div>
-        </div></div>
+    <div class="angle-group">
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-plane"></use></svg></div>Pillar 2: Tiễn sân bay du học sinh</div>
+      <div class="angle-cards">
+        <div class="expand-card">
+          <div class="exp-head"><h4>Đồng hành tận cửa Check-in sân bay</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Hình ảnh/clip đội ngũ PNE túc trực tại sân bay Tân Sơn Nhất đêm khuya, hỗ trợ cân hành lý, hướng dẫn làm thủ tục hải quan cho học viên.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>[Sân bay đêm nay] Đồng hành đến phút cuối cùng trước giờ cất cánh – PNE luôn ở đây cùng bạn! 🤝💼</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Trách nhiệm trọn vẹn: PNE không dừng lại ở việc trả Visa, mà sát cánh lo toan mọi chi tiết nhỏ nhất tại sân bay.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Giây phút chia tay &amp; Cái ôm của cha mẹ</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Khai thác góc nhìn cảm xúc qua hình ảnh cái ôm lưu luyến, những giọt nước mắt và lời dặn dò của phụ huynh gửi gắm con cho PNE.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Tạm biệt Việt Nam, hẹn gặp lại ở nước Đức vinh quang! Giây phút tiễn bay đầy xúc động của PNE-ers 🥺✈️</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Sự tin tưởng: Gia đình hoàn toàn yên tâm khi gửi gắm tương lai của con cho PNE.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Soi vali du học sinh – Checklist hành lý chuẩn đi Đức</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Bài viết/video thực tế hướng dẫn học viên nên mang gì, cấm mang gì để qua cửa an ninh mượt mà không bị phạt tiền.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Soi vali du học sinh PNE: Mang gì sang Đức để không bị tịch thu tại cửa an ninh sân bay? 🧳</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Kinh nghiệm thực chiến: PNE trang bị tỉ mỉ cho học viên từ những kiến thức đi máy bay thực tế nhất.</p></div>
+          </div></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="angle-group">
-    <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-globe"></use></svg></div>Pillar 4: Nước Đức &amp; Công việc thực tế</div>
-    <div class="angle-cards">
-      <div class="expand-card">
-        <div class="exp-head"><h4>Công việc thực sự khác với tên ngành</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>"Một ngày làm việc" + job reality.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Học Điều dưỡng ở Đức thực sự sẽ làm những công việc gì?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Giúp khách hiểu nghề trước khi chọn nghề.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Thu nhập trong bối cảnh thực tế</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Bóc tách hợp đồng + chi phí.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Lương Ausbildung bao nhiêu? Đừng chỉ nhìn một con số trên quảng cáo.</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Thu nhập phải được nhìn cùng điều kiện và chi phí thực tế.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Đọc hiểu hợp đồng nghề</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Highlight hợp đồng thật.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Một hợp đồng nghề Đức có những thông tin nào bạn nhất định phải biết?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Dùng bằng chứng thật để khách tự kiểm chứng.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Cuộc sống tại Đức</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Photo/video reality.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Một ngày của du học sinh nghề tại Đức diễn ra như thế nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Đưa "cuộc sống ở Đức" từ tưởng tượng thành hình ảnh cụ thể.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Nhà ở &amp; sinh hoạt</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Tour/chi phí thực tế.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Sang Đức ở đâu? Học viên nghề thường bắt đầu cuộc sống như thế nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Giảm nỗi lo về những vấn đề rất đời thường sau khi sang Đức.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Văn hóa &amp; môi trường làm việc</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>So sánh Việt–Đức.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Đi làm ở Đức khác Việt Nam ở những điểm nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Chuẩn bị kỳ vọng và tác phong trước khi sang.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Khó khăn không được quảng cáo</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Reality check.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>3 điều về cuộc sống tại Đức bạn nên biết trước khi đặt vé máy bay.</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Không tô hồng; chuẩn bị tâm lý thực tế.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Cơ hội nghề nghiệp</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Giải thích nhu cầu nhân lực.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Vì sao Đức đang cần nhân lực ở nhóm ngành này?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Giúp khách hiểu cơ hội nghề nghiệp đến từ nhu cầu thật.</p></div>
-        </div></div>
+    <div class="angle-group">
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-globe"></use></svg></div>Pillar 3: Du học sinh tại Đức</div>
+      <div class="angle-cards">
+        <div class="expand-card">
+          <div class="exp-head"><h4>Room-tour phòng trọ/ký túc xá tại Đức</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Hình ảnh phòng ngủ, nhà bếp, hệ thống sưởi và đồ dùng đã được PNE sắp xếp sẵn ngay khi hạ cánh.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>[Room Tour] Mở cửa căn hộ thuê sẵn của học viên PNE ngày đầu sang Đức: Rộng rãi, ấm áp và đủ đồ! 🏠🇩🇪</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>An cư tuyệt đối: Lời hứa lo sẵn nhà ở là có thật 100%, đập tan nỗi sợ không có chỗ ở nơi xứ người.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>1 ngày khám phá nước Đức cùng du học sinh PNE</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Theo chân học viên trải nghiệm nước Đức.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>[Vlog từ Đức] Một ngày tại Đức diễn ra như thế nào? 🩺⚙️</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Trải nghiệm thực tế: Góc nhìn chân thật về cuộc sống tại Đức.</p></div>
+          </div></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="angle-group">
-    <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-monitor"></use></svg></div>Pillar 5: Tiếng Đức thực tế &amp; Năng lực đầu ra</div>
-    <div class="angle-cards">
-      <div class="expand-card">
-        <div class="exp-head"><h4>Học tiếng để sử dụng, không chỉ để thi</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Tình huống thực tế.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>B1 không chỉ để lấy chứng chỉ: Sang Đức bạn sẽ dùng tiếng Đức vào những việc gì?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Mục tiêu cuối cùng là năng lực sử dụng trong cuộc sống và công việc.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Khoảng cách giữa chứng chỉ và năng lực</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Phân tích tình huống.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Có B1 rồi nhưng liệu bạn đã sẵn sàng làm việc tại Đức?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Chứng chỉ là điều kiện; khả năng sử dụng mới quyết định sự thích nghi.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Tiếng Đức theo nghề</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Tình huống nghề nghiệp.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Điều dưỡng cần dùng tiếng Đức như thế nào trong một ngày làm việc?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Gắn đào tạo tiếng với nghề nghiệp cụ thể.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Nỗi sợ thi ÖSD</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>FAQ + giải thích.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Thi ÖSD B1 khó ở đâu? Những điều học viên thường lo nhất.</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Giảm tâm lý sợ thi bằng thông tin và sự chuẩn bị.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Bằng chứng năng lực đào tạo</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Case học viên + kết quả.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Từ không biết tiếng Đức đến đỗ ÖSD lần đầu: Học viên đã chuẩn bị như thế nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Dùng kết quả thực tế để chứng minh năng lực đào tạo.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Năng lực đầu ra</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Checklist.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Trước ngày sang Đức, một học viên cần làm được gì bằng tiếng Đức?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Đặt chuẩn đầu ra theo nhu cầu thực tế, không chỉ theo chứng chỉ.</p></div>
-        </div></div>
+    <div class="angle-group">
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-landmark"></use></svg></div>Pillar 4: Trạm thi ÖSD chính thức tại TP.HCM</div>
+      <div class="angle-cards">
+        <div class="expand-card">
+          <div class="exp-head"><h4>Thi ngay tại nơi mình học – Lợi thế tâm lý phòng thi</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Phân tích sự khác biệt giữa việc phải đi thi ở nơi xa lạ vs. thi tại ngay phòng học quen thuộc hàng ngày ở PNE.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Đi thi tiếng Đức mà quen từng cái bàn, cái ghế – Bí kíp giảm 50% áp lực phòng thi cho PNE-ers! 🎯</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Trạm thi tại chỗ: Học tại đâu, thi tại đó – giúp học viên tự tin đạt phong độ cao nhất.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Cảnh báo rủi ro "Học một nơi, thi một nẻo"</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Chỉ ra thực trạng học viên trung tâm khác phải tự chật vật "săn" suất thi tự do, dễ bị trễ lịch làm lỡ kỳ bay.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Cảnh báo: 80% du học sinh trễ lộ trình bay chỉ vì không chủ động được lịch thi chứng chỉ! ⚠️</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Chủ động tiến độ: PNE tự quản lý Trạm thi ÖSD, đảm bảo ca thi liên tục giúp hồ sơ đi đúng hẹn.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Đặc quyền "Không bao giờ lo thiếu suất thi" của PNE-ers</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Chia sẻ thông tin kỳ thi đều được gửi trực tiếp cho từng học viên, giúp các bạn hoàn toàn yên tâm cày kiến thức.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Privilege của PNE-er: Không bao giờ biết đến cảm giác "tranh giành" từng suất thi ÖSD! 🎫</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Đặc quyền độc nguyên: Học viên PNE luôn được ưu tiên lộ trình thi cử thuận lợi nhất.</p></div>
+          </div></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="angle-group">
-    <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-award"></use></svg></div>Pillar 6: Bằng chứng &amp; Năng lực thực thi PNE</div>
-    <div class="angle-cards">
-      <div class="expand-card">
-        <div class="exp-head"><h4>Giá trị của hệ sinh thái khép kín</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Giải thích mô hình.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Tư vấn – học – thi ÖSD – hồ sơ cùng một đơn vị: Khác biệt nằm ở đâu?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>USP chính: giảm việc phải tự kết nối nhiều đơn vị trong một hành trình.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Một hành trình được vận hành thế nào</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Behind-the-scenes.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Một hồ sơ Du học nghề Đức tại PNE đi qua những bộ phận nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Cho thấy phía sau một kết quả là cả hệ thống vận hành.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Trạm thi ÖSD</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Explain + proof.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Có Trạm thi ÖSD ngay trong hệ thống mang lại lợi ích gì cho học viên?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Gắn Trạm thi với trải nghiệm và tiến độ của học viên.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Năng lực đào tạo</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Classroom/case study.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>PNE chuẩn bị học viên như thế nào trước kỳ thi ÖSD?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Chứng minh năng lực đào tạo bằng cách làm, không chỉ claim.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>97,3% đỗ ÖSD lần đầu</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Data storytelling.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>97,3% học viên đỗ ÖSD lần đầu – điều gì đứng phía sau con số này?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Con số là kết quả của hệ thống đào tạo và chuẩn bị.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>15 năm kinh nghiệm</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Timeline + evolution.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>15 năm làm Du học nghề Đức đã tạo nên hệ thống PNE hôm nay như thế nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Biến "15 năm" từ claim về tuổi đời thành bằng chứng về năng lực tích lũy.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Trách nhiệm xuyên suốt</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>So sánh mô hình.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Nếu một hành trình có nhiều đơn vị cùng tham gia, ai chịu trách nhiệm khi có vấn đề?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Làm rõ giá trị của việc có một hệ thống chịu trách nhiệm xuyên suốt.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Hỗ trợ sau ngày bay</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Case/behind-the-scenes.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Hành trình có kết thúc ở ngày nhận visa? PNE đồng hành với học viên đến đâu?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Củng cố ý nghĩa "khép kín", không chỉ dừng ở việc đưa khách sang Đức.</p></div>
-        </div></div>
+    <div class="angle-group">
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-monitor"></use></svg></div>Pillar 5: Chứng chỉ B1/B2 &amp; Lớp học tiếng Đức</div>
+      <div class="angle-cards">
+        <div class="expand-card">
+          <div class="exp-head"><h4>Giải mã con số 97,3% đạt mục tiêu học tiếng Đức từ lần thi đầu tiên</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Bóc tách phương pháp dạy luyện thi thực chiến, thi thử trên đề thật giúp học viên "ăn điểm" dễ dàng.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Giải mã con số 97,3% đạt chứng chỉ tiếng Đức lần đầu tại PNE: Do đề dễ hay do phương pháp? 📊</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Chất lượng đào tạo: Lộ trình tinh gọn, tập trung vào kỹ năng làm bài thi ÖSD thực tế.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Vinh danh Bảng vàng ÖSD + Kêu gọi đăng ký Lớp học thử 0đ</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Đăng ảnh vinh danh học viên vừa cầm bằng B1/B2 trên tay, lồng ghép Call-to-Action mời trải nghiệm lớp học thử Online.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>[Chúc mừng PNE-er] Ẵm trọn B1 ÖSD sau X tháng! Bạn cũng muốn đạt kết quả này? Đăng ký Lớp học thử miễn phí ngay! 📜</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Kết quả làm bằng chứng: Thành công của học viên cũ là lời cam kết mạnh mẽ nhất cho người học mới.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Bỏ túi bài học ngắn: Từ vựng/Mẫu câu giao tiếp bỏ túi</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Infographic/Short video bài học từ vựng tiếng Đức ứng dụng ngay trong cuộc sống hoặc thi nói (Sprechen).</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Bỏ túi 10 câu tiếng Đức "thần thánh" giúp bạn tự tin đạt điểm tối đa phần thi Sprechen ÖSD! 💡</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Trao giá trị thực tế: Giúp người xem thấy tiếng Đức không quá khó nếu có phương pháp đúng.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Học tiếng Đức thời 4.0 cùng App PNE Hub &amp; EdTech AI</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Giới thiệu tính năng sửa phát âm 1:1, luyện từ vựng qua AI trên điện thoại giúp học viên ôn tập mọi lúc mọi nơi.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Sửa phát âm chuẩn bản xứ 1:1 ngay trên điện thoại với tính năng AI đỉnh cao của App PNE Hub! 📲⚡</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Ứng dụng công nghệ: PNE tiên phong ứng dụng EdTech giúp tối ưu thời gian và hiệu quả học tiếng Đức.</p></div>
+          </div></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="angle-group">
-    <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-file"></use></svg></div>Pillar 7: Minh bạch Lộ trình, Chi phí &amp; Hồ sơ</div>
-    <div class="angle-cards">
-      <div class="expand-card">
-        <div class="exp-head"><h4>Minh bạch toàn bộ lộ trình</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Timeline / roadmap.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Từ lúc bắt đầu đến ngày bay Đức: Hồ sơ của bạn sẽ đi qua những bước nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Giúp khách nhìn thấy toàn bộ hành trình, biết mình đang ở đâu và bước tiếp theo là gì.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Minh bạch những khoản cần chuẩn bị</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>FAQ / checklist, không nêu số tiền.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Ngoài dịch vụ, trước khi sang Đức bạn còn cần chủ động chuẩn bị những gì?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Giúp khách có cái nhìn đầy đủ về những việc cần chuẩn bị, mà không cần công khai mức phí.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Minh bạch rủi ro &amp; điều kiện thực tế</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Myth-busting / cảnh báo.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>5 điều bạn nên hỏi rõ trước khi quyết định Du học nghề Đức.</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>PNE thể hiện vai trò tư vấn có trách nhiệm, giúp khách ra quyết định dựa trên thông tin đầy đủ.</p></div>
-        </div></div>
-      </div>
-      <div class="expand-card">
-        <div class="exp-head"><h4>Minh bạch bằng case thật</h4><div class="chev">+</div></div>
-        <div class="exp-body"><div class="exp-body-inner">
-          <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Before–after / hồ sơ thực tế.</p></div>
-          <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Từ ngày đăng ký đến ngày nhận visa: Hành trình của một học viên PNE diễn ra như thế nào?</p></div>
-          <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Dùng bằng chứng thật thay cho lời quảng cáo về quy trình.</p></div>
-        </div></div>
+    <div class="angle-group">
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-file"></use></svg></div>Pillar 6: Nhật ký hồ sơ &amp; Tư vấn tại VP</div>
+      <div class="angle-cards">
+        <div class="expand-card">
+          <div class="exp-head"><h4>Nhật ký tư vấn 1:1 – Giải đáp thắc mắc cho Phụ huynh</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Hình ảnh/Clip ngắn góc làm việc tư vấn tận tâm giữa chuyên gia PNE với gia đình, giải thích lộ trình may đo riêng.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>[Nhật ký tư vấn PNE] Giải đáp 1001 thắc mắc của phụ huynh trước khi quyết định cho con sang Đức! 💼</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Minh bạch &amp; Tận tâm: Tư vấn rõ ràng, không vẽ phân luồng ảo, thiết kế lộ trình sát thực tế.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Hợp đồng làm việc về tay – Chắc chắn tương lai trước khi xuất cảnh</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Hình ảnh các xấp hồ sơ, highlight mức lương.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Hợp đồng làm việc Đức - Tấm vé bảo chứng tương lai cho PNE đã chính thức hạ cánh PNE 📑</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Đánh vào pháp lý thực tế &amp; sự sòng phẳng. Nói "không" với những lời hứa suông. Sang Đức là có việc ngay, lương rõ ràng từng mốc năm 1, năm 2, năm 3, không có chuyện "qua tới nơi mới tìm việc".</p></div>
+          </div></div>
+        </div>
       </div>
     </div>
-  </div>
 
-</div>
+    <div class="angle-group">
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-bulb"></use></svg></div>Pillar 7: Góc Định Hướng: Tâm Lý &amp; Hướng Nghiệp 4.0</div>
+      <div class="angle-cards">
+        <div class="expand-card">
+          <div class="exp-head"><h4>Áp lực đồng trang lứa tuổi 20+ (Peer Pressure) &amp; Lối thoát bứt phá</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Bài viết tâm sự chạm đúng nỗi đau Gen Z/người đi làm kẹt ở công việc lương dậm chân tại chỗ, nhìn bạn bè thành công.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Nhìn bạn bè lên sếp, mua nhà: Đã bao giờ bạn cảm thấy mình đang "tụm lại phía sau" ở tuổi 22+? 💼</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Bứt phá sự nghiệp: Du học nghề Đức là quyết định đầu tư dài hạn sòng phẳng để thay đổi vị thế bản thân.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Smart Nursing 4.0 – Định nghĩa lại ngành Điều dưỡng tại Đức</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Đập tan định kiến "làm việc chân tay vất vả", giới thiệu mô hình Điều dưỡng hiện đại ứng dụng iPad, robot nâng hạ tại Đức.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Ngành Điều dưỡng Đức 2026: Làm chủ công nghệ Smart Nursing 4.0 hay lao động chân tay thô sơ? 🩺</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Vị thế ngành nghề: Điều dưỡng tại Đức là công việc văn minh, ứng dụng công nghệ cao và có vị thế xã hội tốt.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Kỹ thuật xanh &amp; IT – Mỏ vàng định cư mới tại Đức</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Phân tích xu hướng thiếu hụt nhân lực trong mảng ô tô điện, năng lượng tái tạo và CNTT tại Đức dành cho các bạn trẻ mê kỹ thuật.</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>Mở ra tương lai: Tại sao du học nghề Kỹ thuật xanh và IT tại Đức là "mỏ vàng" định cư bền vững? ⚙️⚡</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Xu hướng tương lai: Định hướng các ngành nghề hợp thời đại, dễ tìm việc và dễ nhập quốc tịch Đức.</p></div>
+          </div></div>
+        </div>
+        <div class="expand-card">
+          <div class="exp-head"><h4>Định hướng ngành du học nghề Đức phù hợp với tính cách</h4><div class="chev">+</div></div>
+          <div class="exp-body"><div class="exp-body-inner">
+            <div class="angle-field"><div class="lbl">Cách tiếp cận</div><p>Không có ngành nào "tốt nhất", chỉ có ngành "phù hợp nhất".</p></div>
+            <div class="angle-field"><div class="lbl">Tiêu đề gợi ý</div><p>❌ Đừng chọn ngành du học Đức chỉ vì "thấy bạn bè đi đông"! Đâu là ngành học thực sự sinh ra dành cho bạn?</p></div>
+            <div class="angle-field msg"><div class="lbl">Điểm nhấn truyền thông</div><p>Cá nhân hoá lộ trình: PNE không ép học viên vào những ngành "sẵn hợp đồng" để chạy chỉ số. PNE may đo lộ trình theo đúng tính cách và sở trường, giúp học viên sang Đức học đúng ngành, làm đúng nghề, an tâm định cư lâu dài.</p></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 
 </section>
@@ -2049,47 +2698,310 @@
 
   <div class="section">
     <div class="section-head"><h2>Quy tắc giữ nhận diện</h2></div>
+    <p class="section-lead" style="margin-bottom:20px;">Quy tắc Do &amp; Don't áp dụng cho toàn bộ ấn phẩm truyền thông của PNE.</p>
+
+    <div class="angle-group-title" style="margin-top:0;">Nền tảng thương hiệu (Brand Foundation)</div>
 
     <div class="dodont-block">
-      <h4>Nền chủ đạo</h4>
+      <h4>Triết lý Visual (Brand Principles)</h4>
       <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Giữ nền sáng (Trắng #FFFFFF / Xám nhạt #F1F1F1) làm chủ đạo, chừa nhiều khoảng thở để thiết kế hiện đại và thoáng đãng.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Không dùng các màu tối ngoài hệ (xanh navy, đen tuyền, xanh rêu) làm mảng nền chủ đạo cho các post thông thường.</div>
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Thiết kế để truyền tải sự tin cậy, không chỉ để bắt mắt.</li>
+            <li>Ưu tiên rõ ràng và dễ tiếp nhận hơn là nhiều hiệu ứng.</li>
+            <li>Mọi yếu tố đồ họa đều phải phục vụ thông điệp.</li>
+            <li>Giữ cảm giác hiện đại, chuyên nghiệp, trẻ trung và tích cực.</li>
+            <li>Tạo sự đồng nhất để người xem nhận ra thương hiệu ngay cả khi chưa nhìn thấy logo.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Chạy theo xu hướng thiết kế nếu làm mất bản sắc thương hiệu.</li>
+            <li>Hy sinh khả năng đọc để đổi lấy hiệu ứng thị giác.</li>
+            <li>Sử dụng các yếu tố tạo cảm giác nặng nề, u tối hoặc giật gân.</li>
+            <li>Biến mỗi bài đăng thành một phong cách hoàn toàn mới.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="dodont-block">
-      <h4>Gradient thương hiệu</h4>
+      <h4>Nhận diện theo quốc gia (Regional Identity)</h4>
       <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Dùng gradient đỏ thương hiệu (#D12026 → #9C171C) cho các banner chiến dịch lớn, ảnh bìa, post vinh danh hoặc thông báo trang trọng.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Không lạm dụng màu Đỏ chính (#D12026) thành các mảng nền lớn cho toàn bộ bài đăng (gây gắt mắt, ức chế thị giác người lướt).</div>
+        <div class="do-card"><div class="tag">Do</div>Đức → Đỏ + Trắng + Xám + Vàng.</div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Phối sai màu quốc gia.</li>
+            <li>Dùng quá nhiều quốc kỳ.</li>
+            <li>Dùng icon văn hóa rập khuôn.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="angle-group-title">Hệ thống nền tảng thiết kế (Core Design System)</div>
+
+    <div class="dodont-block">
+      <h4>Màu sắc (Color System)</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Dùng nền trắng, xám nhạt (#F1F1F1) hoặc gradient hồng nhạt → trắng để tạo sự thoáng.</li>
+            <li>Chỉ dùng màu nhấn (vàng) để đại diện cho nước Đức (văn hoá/ngôn ngữ...).</li>
+            <li>Khi cần nhiều cấp độ đỏ, tạo tint từ #D12026 ở các mức 20% / 40% / 60% / 80%.</li>
+            <li>Đảm bảo tỷ lệ khoảng 60% trắng/xám – 30% đỏ – 10% màu nhấn.</li>
+            <li>Headline tối đa 2 dòng.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Tự ý đổi sang đỏ cam, đỏ tươi hoặc đỏ đô quá đậm.</li>
+            <li>Sử dụng nền đỏ full màn hình cho toàn bộ post.</li>
+            <li>Phối trên 3 màu nhấn trong cùng một thiết kế.</li>
+            <li>Sử dụng các tone hồng hoặc đỏ không cùng hệ màu thương hiệu.</li>
+            <li>Để màu đỏ chiếm gần như toàn bộ layout gây cảm giác nặng và "creepy".</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="dodont-block">
-      <h4>Màu nhấn CTA</h4>
+      <h4>Typography</h4>
       <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Dùng màu nhấn dành riêng cho CTA, các nút bấm hành động hoặc highlight từ khóa đặc biệt quan trọng.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Không phối quá nhiều màu đậm cùng lúc trên diện tích lớn — làm mất sự sạch sẽ, tinh tế của thương hiệu.</div>
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Chỉ nhấn mạnh từ khóa quan trọng bằng Bold hoặc màu đỏ.</li>
+            <li>Giãn dòng thoáng, dễ đọc trên mobile (line-height tối thiểu 1.2).</li>
+            <li>Có hierarchy rõ ràng: Heading &gt; Subheading &gt; Body (gợi ý tỷ lệ cỡ chữ 3 : 1.5 : 1).</li>
+            <li>Dùng font hiện đại thống nhất (tối đa 1 font family, 2 độ đậm).</li>
+            <li>Ưu tiên background sáng, sạch, nhiều khoảng thở.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Viết headline dài 4–5 dòng.</li>
+            <li>Tô nhiều màu trong cùng một headline.</li>
+            <li>Ép chữ sát nhau hoặc tracking quá chặt.</li>
+            <li>Để mọi text cùng kích thước.</li>
+            <li>Sử dụng trên 3 font trong một thiết kế.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="dodont-block">
-      <h4>Màu chữ nội dung</h4>
+      <h4>Background</h4>
       <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Sử dụng màu chữ Đen xám (#1A1A1A) để làm nội dung chính (Body text), giúp thông tin tương phản tốt và dễ đọc trên nền sáng.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Không dùng các màu lệch tông (cam, tím, hồng, xanh lá) nằm ngoài hệ màu quy chuẩn của thương hiệu.</div>
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Dùng gradient nhẹ hồng → trắng (#FFD7D8 → #FFFFFF), lấy từ hệ Gradient System chung.</li>
+            <li>Background chỉ đóng vai trò hỗ trợ nội dung.</li>
+            <li>Dùng silhouette landmark với opacity thấp (10–15%).</li>
+            <li>Đảm bảo độ tương phản chữ/nền tối thiểu 4.5:1 cho text quan trọng.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Dùng background quá tối hoặc nhiều texture.</li>
+            <li>Dùng gradient vàng làm nền chính.</li>
+            <li>Để background nổi bật hơn headline.</li>
+            <li>Đặt landmark quá đậm làm rối hình.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="dodont-block">
-      <h4>Chữ trên ảnh (mobile-first)</h4>
+      <h4>Khả năng tiếp cận (Accessibility)</h4>
       <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Giữ chữ trên ảnh 25–30% để chuẩn mobile-first, giúp ảnh hiển thị tối ưu trên thiết bị di động.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Không để chữ màu tối trên các mảng nền đỏ đậm hoặc chữ trắng trên nền xám nhạt vì tỷ lệ tương phản thấp, gây khó đọc.</div>
+        <div class="do-card"><div class="tag">Do</div>Chừa khoảng trắng an toàn (clear space) quanh logo tối thiểu bằng 1 lần chiều cao icon cánh hoa.</div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Dùng chữ trắng hoặc chữ nhạt màu trên nền vàng #FFCC00 — tương phản thấp, khó đọc.</li>
+            <li>Dùng chữ đỏ trên nền đỏ (dù khác sắc độ) cho các dòng quan trọng.</li>
+          </ul>
+        </div>
       </div>
+    </div>
+
+    <div class="angle-group-title">Thành phần đồ họa &amp; Tài nguyên (Visual Assets &amp; Elements)</div>
+
+    <div class="dodont-block">
+      <h4>Logo</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Giữ kích thước logo tối thiểu đảm bảo rõ nét trên mobile (chiều cao ≥24px trên feed).</li>
+            <li>Vị trí logo luôn phải đặt ở góc trên ảnh, ưu tiên đặt ở giữa ảnh.</li>
+            <li>Dùng shape đơn giản, bo góc nhẹ.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Đặt logo đè lên ảnh nền phức tạp hoặc sát mép khung hình.</li>
+            <li>Thu nhỏ logo tới mức mất chi tiết cánh hoa.</li>
+            <li>Để icon/chữ khác che khuất một phần logo.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="dodont-block">
+      <h4>Element đồ họa (Graphic Elements)</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Icon đồng bộ cùng style.</li>
+            <li>Landmark chỉ là điểm nhấn.</li>
+            <li>Element hỗ trợ dẫn mắt về CTA/headline.</li>
+            <li>Sử dụng ảnh thật hoặc AI có chất lượng cao.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Dùng shape 3D nặng.</li>
+            <li>Trộn icon line và icon 3D.</li>
+            <li>Biến landmark thành nhân vật chính.</li>
+            <li>Thêm element chỉ để "cho đẹp".</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="dodont-block">
+      <h4>Nhân vật / Hình stock người (Characters / Stock Photography)</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Ưu tiên người châu Á gần gũi.</li>
+            <li>Màu ảnh đồng bộ với brand, tương phản vừa phải.</li>
+            <li>Ánh sáng tự nhiên.</li>
+            <li>Shadow nhẹ để tạo chiều sâu (opacity ≤20%, blur nhỏ).</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Dùng ảnh AI lỗi da hoặc méo tay.</li>
+            <li>Dùng người mẫu mang cảm giác quá Tây nếu không cần thiết.</li>
+            <li>Dùng ảnh quá bão hòa màu.</li>
+            <li>Dùng filter HDR hoặc contrast quá mạnh.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="dodont-block">
+      <h4>Hiệu ứng (Effects)</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Glow nhẹ quanh CTA hoặc headline.</li>
+            <li>Chỉ dùng blur khi cần tách lớp (background và foreground).</li>
+            <li>Mỗi layout chỉ nên có 1–2 điểm nhấn chính (số liệu, badge hoặc CTA).</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Dùng shadow đen dày.</li>
+            <li>Dùng lens flare hoặc light leak quá nhiều.</li>
+            <li>Lạm dụng blur.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="dodont-block">
+      <h4>Bố cục (Layout)</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Chừa khoảng trắng đủ để mắt nghỉ (tối thiểu ~10% diện tích canvas).</li>
+            <li>Sử dụng lưới (Grid) để căn chỉnh.</li>
+            <li>CTA luôn nằm ở vị trí dễ nhìn.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Cố nhồi quá nhiều USP.</li>
+            <li>Nhồi kín toàn bộ canvas.</li>
+            <li>Đặt element lệch thiếu chủ đích.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="angle-group-title">Ứng dụng thực tế (Practical Applications &amp; Formats)</div>
+
+    <div class="dodont-block">
+      <h4>Thiết kế Carousel</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Các slide dùng cùng hệ background.</li>
+            <li>Màu chuyển tiếp tự nhiên.</li>
+            <li>Typography thống nhất.</li>
+            <li>Khoảng cách/lề giống nhau giữa các slide.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Để CTA chìm trong background.</li>
+            <li>Mỗi slide một phong cách khác nhau.</li>
+            <li>Slide đầu tối, slide sau sáng.</li>
+            <li>Font thay đổi giữa các slide.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="dodont-block">
+      <h4>Quảng cáo (Ads)</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Headline tập trung một thông điệp.</li>
+            <li>Tối đa 3 USP.</li>
+            <li>CTA rõ ràng, 1 CTA / creative.</li>
+            <li>Đọc hiểu trong 3 giây đầu.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Liệt kê quá nhiều lợi ích.</li>
+            <li>Đưa cả đoạn văn lên visual.</li>
+            <li>Quá nhiều badge, icon hoặc sticker.</li>
+            <li>Dùng màu đỏ quá nặng gây cảm giác cảnh báo.</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--gray-600);font-style:italic;margin-top:10px;">Gợi ý: Headline ≤ 6 từ, 1 CTA duy nhất.</p>
     </div>
   </div>
+
 
   <div class="section">
     <div class="section-head"><h2>Ví dụ áp dụng</h2></div>
@@ -2186,6 +3098,29 @@
     head.addEventListener('click', ()=>{
       head.closest('.expand-card').classList.toggle('open');
     });
+  });
+
+  // profile drawer (persona / buying group / niche group)
+  const drawerOverlay = document.getElementById('drawer-overlay');
+  function closeAllDrawers(){
+    document.querySelectorAll('.drawer.open').forEach(d=>d.classList.remove('open'));
+    if(drawerOverlay) drawerOverlay.classList.remove('open');
+  }
+  document.querySelectorAll('[data-drawer]').forEach(trigger=>{
+    trigger.addEventListener('click', ()=>{
+      const id = trigger.getAttribute('data-drawer');
+      const drawer = document.getElementById(id);
+      if(!drawer) return;
+      closeAllDrawers();
+      drawer.classList.add('open');
+      if(drawerOverlay) drawerOverlay.classList.add('open');
+    });
+  });
+  document.querySelectorAll('[data-close-drawer]').forEach(btn=>{
+    btn.addEventListener('click', closeAllDrawers);
+  });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape') closeAllDrawers();
   });
 </script>
 
