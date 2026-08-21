@@ -901,6 +901,118 @@
   .comp-row .v { text-align: left; }
 }
 </style>
+<style>
+/* Persona profiles: centered modal, keeping the full existing profile content. */
+body.modal-open{overflow:hidden}
+.drawer{
+  position:fixed!important;z-index:110;top:50%!important;left:50%!important;right:auto!important;bottom:auto!important;
+  width:min(820px,calc(100vw - 32px));max-height:min(88vh,900px);display:block!important;overflow:hidden;
+  transform:translate(-50%,-46%) scale(.97)!important;opacity:0;visibility:hidden;
+  border-radius:16px;background:#fff;box-shadow:0 24px 80px rgba(0,0,0,.24);transition:opacity .22s ease,transform .22s ease,visibility .22s ease;
+}
+.drawer.open{transform:translate(-50%,-50%) scale(1)!important;opacity:1;visibility:visible}
+.drawer .drawer-body{max-height:calc(88vh - 112px);overflow-y:auto}
+.drawer-overlay{z-index:105!important}
+.drawer-close{z-index:2}
+@media(max-width:600px){
+  .drawer{width:calc(100vw - 20px);max-height:92vh}
+  .drawer .drawer-body{max-height:calc(92vh - 104px)}
+}
+</style>
+<style>
+/* Brand positioning: reduce visual containers and keep a flatter editorial hierarchy. */
+.positioning-hero{background:transparent!important;border:0!important;box-shadow:none!important;padding:8px 0 18px!important}
+.positioning-hero blockquote{border-left:4px solid var(--red);border-radius:0!important;padding:4px 0 4px 18px!important;background:transparent!important;box-shadow:none!important}
+.trend-grid,.tagline-grid{gap:0!important}
+.trend-card,.tagline-card{background:transparent!important;border:0!important;border-bottom:1px solid var(--gray-300)!important;border-radius:0!important;box-shadow:none!important;padding:18px 12px!important}
+.trend-card:last-child,.tagline-card:last-child{border-bottom:0!important}
+.communication-line{background:transparent!important;border:0!important;border-left:4px solid var(--red)!important;border-radius:0!important;box-shadow:none!important;padding:8px 0 8px 16px!important}
+.step-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px;color:var(--ink-soft)}
+.step-table th{background:var(--gray-100);color:var(--ink);font-weight:800;text-align:left}
+.step-table th,.step-table td{border:1px solid var(--gray-300);padding:11px 12px;vertical-align:top;line-height:1.55}
+.step-table td{text-align:justify;text-justify:inter-word}
+.step-table td:first-child{font-weight:700;color:var(--red);text-align:left;white-space:nowrap}
+.step-table caption{text-align:left;color:var(--ink);font-weight:800;margin:16px 0 8px}
+@media(max-width:760px){.step-table{font-size:12px;display:block;overflow-x:auto;white-space:normal}.step-table td:first-child{white-space:normal}.trend-card,.tagline-card{padding-left:0!important;padding-right:0!important}}
+</style>
+<style>
+/* Positioning distinction: service pillars retain cards; taglines stay flat. */
+.positioning-services .trend-card{
+  background:#fff!important;border:1px solid var(--gray-300)!important;border-radius:var(--radius)!important;
+  box-shadow:0 4px 16px rgba(31,31,31,.06)!important;padding:22px!important;
+}
+.positioning-services .trend-card:last-child{border-bottom:1px solid var(--gray-300)!important}
+.positioning-taglines{gap:0!important;border-top:1px solid var(--gray-300);border-bottom:1px solid var(--gray-300)}
+.positioning-taglines .tagline-card{
+  background:transparent!important;border:0!important;border-right:1px solid var(--gray-300)!important;border-radius:0!important;
+  box-shadow:none!important;padding:18px 20px!important;
+}
+.positioning-taglines .tagline-card:last-child{border-right:0!important}
+.positioning-taglines .tagline-label{color:var(--red);font-weight:800}
+@media(max-width:760px){.positioning-taglines .tagline-card{border-right:0!important;border-bottom:1px solid var(--gray-300)!important;padding-left:0!important;padding-right:0!important}.positioning-taglines .tagline-card:last-child{border-bottom:0!important}}
+</style>
+<style>
+/* Readability fixes for communication line, Lead Magnet paths and measurement diagnostics. */
+.communication-line{background:#fff!important;color:var(--red)!important;border:1px solid var(--red)!important;border-left:5px solid var(--red)!important}
+.communication-line p{color:var(--red)!important;font-weight:800}
+.flow-table .flow-step{display:flex;align-items:center;gap:8px;color:var(--red);font-weight:800}
+.flow-table .flow-step .ico-badge{flex:0 0 auto;background:var(--red)!important;color:#fff!important}
+.flow-table .flow-step .ico{color:#fff!important}
+.path-list,.read-data-list{display:grid;gap:10px;margin-top:10px}
+.path-item,.read-data-item{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:start;padding:10px 12px;background:var(--gray-100);border-left:3px solid var(--red);border-radius:0 8px 8px 0}
+.path-item strong,.read-data-item strong{color:var(--red)}
+.path-item span,.read-data-item span{color:var(--ink-soft)}
+@media(max-width:650px){.path-item,.read-data-item{grid-template-columns:1fr;gap:4px}}
+</style>
+<style>
+/* Detail steps: consistent, compact typography with justified long-form text. */
+.detail-step{font-size:13px}
+.detail-step h4{font-size:15px!important;line-height:1.35!important;margin-bottom:12px!important}
+.detail-step p,
+.detail-step li,
+.detail-step .step-table,
+.detail-step .step-table th,
+.detail-step .step-table td,
+.detail-step .path-item,
+.detail-step .path-item strong,
+.detail-step .path-item span,
+.detail-step .read-data-item,
+.detail-step .read-data-item strong,
+.detail-step .read-data-item span{font-size:13px!important;line-height:1.55!important}
+.detail-step p,
+.detail-step li,
+.detail-step .step-table td,
+.detail-step .path-item span,
+.detail-step .read-data-item span{ text-align:justify; text-justify:inter-word }
+.detail-step .step-table caption{font-size:13px!important;line-height:1.4!important}
+.detail-step .path-item strong,
+.detail-step .read-data-item strong{ text-align:left }
+@media(max-width:650px){.detail-step p,.detail-step li,.detail-step .step-table td,.detail-step .path-item span,.detail-step .read-data-item span{text-align:left}}
+</style>
+<style>
+/* Positioning layout: separate visual groups with deliberate whitespace. */
+.positioning-hero{margin-bottom:22px!important}
+.positioning-services{gap:16px!important;margin-bottom:30px!important}
+.positioning-services .trend-card{min-height:150px!important}
+.positioning-taglines{margin:0 0 18px!important;padding:10px 0!important}
+.positioning-taglines .tagline-card{padding:18px 22px!important;min-height:106px;display:flex;flex-direction:column;justify-content:center}
+.communication-line{margin:0 0 24px!important;padding:12px 18px!important;min-height:48px;display:flex;align-items:center;justify-content:center}
+.positioning-support{gap:24px!important;margin-top:0!important}
+.positioning-support .card-plain{padding:24px 26px!important;min-height:190px;border-radius:14px!important}
+.positioning-support .card-plain h4{margin-bottom:16px!important}
+.positioning-support .card-plain li{margin-bottom:12px!important;line-height:1.55!important}
+@media(max-width:760px){
+  .positioning-services{gap:14px!important}
+  .positioning-taglines{padding:0!important}
+  .positioning-taglines .tagline-card{min-height:auto;padding:16px 0!important}
+  .positioning-support{gap:16px!important}
+  .positioning-support .card-plain{min-height:auto;padding:20px!important}
+}
+</style>
+<style>
+.measurement-table td:first-child{width:43%;font-weight:700;color:var(--ink);text-align:left!important}
+.measurement-table td:nth-child(2){width:57%}
+</style>
 </head>
 <body>
 
@@ -1195,7 +1307,7 @@
         <div class="pc-percent">30%</div>
         <div class="pc-persona-label">Persona</div>
         <div class="pc-persona-name">Minh Anh</div>
-        <div class="pc-cta">Xem hồ sơ <span>&rarr;</span></div>
+        <div class="pc-cta">Mở hồ sơ <span>&rarr;</span></div>
       </div>
       <div class="persona-card" data-drawer="drawer-nguoitre">
         <div class="pc-top"><span class="pc-num">02</span></div>
@@ -1203,7 +1315,7 @@
         <div class="pc-percent">30%</div>
         <div class="pc-persona-label">Persona</div>
         <div class="pc-persona-name">Gia Huy</div>
-        <div class="pc-cta">Xem hồ sơ <span>&rarr;</span></div>
+        <div class="pc-cta">Mở hồ sơ <span>&rarr;</span></div>
       </div>
       <div class="persona-card" data-drawer="drawer-svchuyen">
         <div class="pc-top"><span class="pc-num">03</span></div>
@@ -1211,7 +1323,7 @@
         <div class="pc-percent">25%</div>
         <div class="pc-persona-label">Persona</div>
         <div class="pc-persona-name">Thảo Vy</div>
-        <div class="pc-cta">Xem hồ sơ <span>&rarr;</span></div>
+        <div class="pc-cta">Mở hồ sơ <span>&rarr;</span></div>
       </div>
       <div class="persona-card" data-drawer="drawer-nguoidilam">
         <div class="pc-top"><span class="pc-num">04</span></div>
@@ -1219,7 +1331,7 @@
         <div class="pc-percent">15%</div>
         <div class="pc-persona-label">Persona</div>
         <div class="pc-persona-name">Hoàng Nam</div>
-        <div class="pc-cta">Xem hồ sơ <span>&rarr;</span></div>
+        <div class="pc-cta">Mở hồ sơ <span>&rarr;</span></div>
       </div>
     </div>
 
@@ -1232,7 +1344,7 @@
         <p>Nhóm ảnh hưởng xuyên suốt đến quyết định của 4 phân khúc DHND chính.</p>
         <div class="chip-row"><span>Insight ẩn</span><span>Hành vi</span><span>Tension</span></div>
       </div>
-      <div class="gc-cta">Xem hồ sơ <span>&rarr;</span></div>
+      <div class="gc-cta">Mở hồ sơ <span>&rarr;</span></div>
     </div>
 
     <div class="group-card niche" data-drawer="drawer-visa18b">
@@ -1242,7 +1354,7 @@
         <h4>Visa 18B</h4>
         <p>Nhóm đối tượng riêng với nhu cầu / điều kiện đặc thù (hiện tập trung ngành Đầu bếp).</p>
       </div>
-      <div class="gc-cta">Xem hồ sơ <span>&rarr;</span></div>
+      <div class="gc-cta">Mở hồ sơ <span>&rarr;</span></div>
     </div>
 
     <h4 style="font-size:14px;margin:var(--s3) 0 4px;text-transform:uppercase;letter-spacing:.06em;color:var(--red);">Bảng tổng hợp Insight ẩn</h4>
@@ -1978,7 +2090,7 @@
     <div class="section-head"><h2>Định vị thương hiệu PNE</h2></div>
     <div class="positioning-hero"><blockquote>“PHUONG NAM EDUCATION – TỪ ĐỊNH HƯỚNG NGHỀ, ĐÀO TẠO TIẾNG ĐỨC, THI CHỨNG CHỈ ÖSD ĐẾN CHUẨN BỊ HỒ SƠ, TẤT CẢ ĐƯỢC KẾT NỐI RÕ RÀNG TRONG CÙNG MỘT HỆ THỐNG.”</blockquote></div>
 
-    <div class="trend-grid" style="margin-bottom:var(--s3);">
+    <div class="trend-grid positioning-services" style="margin-bottom:var(--s3);">
       <div class="trend-card">
         <h4 class="heading-with-icon"><span class="ico-badge sm"><svg class="ico"><use href="#i-monitor"></use></svg></span> Đào tạo tiếng Đức</h4>
         <p style="font-size:13.5px;">Chương trình tối ưu từ A1 đến B2, tập trung vào kỹ năng thực tế và giao tiếp chuyên ngành.</p>
@@ -1994,14 +2106,14 @@
     </div>
 
 
-    <div class="tagline-grid">
+    <div class="tagline-grid positioning-taglines">
       <div class="tagline-card"><div class="tagline-label">Brand Tagline</div><p>“Kết nối hành trình du học nghề Đức trong cùng một hệ thống”</p></div>
       <div class="tagline-card"><div class="tagline-label">Communication Tagline</div><p>“Hiểu đúng nghề, chuẩn bị đúng hướng”</p></div>
       <div class="tagline-card"><div class="tagline-label">Emotional Tagline</div><p>“Vững bước từ lựa chọn đầu tiên.”</p></div>
     </div>
     <div class="communication-line"><p>Hiểu đúng nghề – Học đúng hướng – Thi đúng tiến độ – Hồ sơ rõ ràng hơn.</p></div>
     
-    <div class="two-col">
+    <div class="two-col positioning-support">
       <div class="card-plain">
         <h4>Lớp bổ trợ Năng lực đào tạo & triển khai</h4>
         <ul>
@@ -2135,18 +2247,18 @@
   <div class="golden-hour"><span class="ico-inline"><svg class="ico"><use href="#i-clock"></use></svg></span>Reels: đăng 20:00–21:00 hàng ngày (giờ vàng thuật toán) · Bài có Lead Magnet: đăng sáng T3/T5 (09:00–10:00) để tư vấn viên xử lý ngay trong ngày.</div>
 <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin:var(--s3) 0 14px;"><span class="ico-badge sm"><svg class="ico"><use href="#i-flow"></use></svg></span> Lead Magnet Flow</h4>
   <div class="flow-table-wrap"><table class="flow-table"><thead><tr><th>Bước</th><th>Mục tiêu</th><th>Người dùng trải nghiệm gì?</th><th>PNE cần làm gì?</th><th>Đầu ra</th></tr></thead><tbody>
-  <tr><td>1. Content</td><td>Thu hút đúng nhu cầu</td><td>Xem bài viết, Reel, carousel hoặc quảng cáo chạm đúng vấn đề.</td><td>Xác định persona, pain point và CTA dẫn tới tài nguyên phù hợp.</td><td>Hiểu vấn đề và bắt đầu Lead Magnet.</td></tr>
-  <tr><td>2. Nhận giá trị</td><td>Đổi giá trị lấy thông tin</td><td>Điền form ngắn để nhận quiz, checklist, calculator hoặc ebook.</td><td>Tạo landing page, form và gửi tài nguyên ngay sau khi hoàn tất.</td><td>PNE có thông tin cơ bản và dữ liệu hành vi.</td></tr>
-  <tr><td>3. Phân loại nhu cầu</td><td>Hiểu người dùng</td><td>Trả lời câu hỏi hoặc chọn mối quan tâm, thời điểm sẵn sàng.</td><td>Phân loại theo nhóm khách hàng, ngành, nhu cầu và mức độ sẵn sàng.</td><td>Biết nên gửi gì tiếp theo và lead nào cần tư vấn sớm.</td></tr>
-  <tr><td>4. Tư vấn phù hợp</td><td>Biến lead thành cuộc trò chuyện</td><td>Nhận nội dung hoặc lời mời tư vấn phù hợp với kết quả.</td><td>Tư vấn viên liên hệ dựa trên dữ liệu lead, không hỏi lại từ đầu.</td><td>Lịch hẹn, hồ sơ đánh giá hoặc cơ hội đăng ký.</td></tr>
-  <tr><td>5. Đo lường</td><td>Biết flow có hiệu quả không</td><td>Không cần thao tác thêm.</td><td>Theo dõi lead hợp lệ, lịch hẹn và chuyển đổi để tối ưu.</td><td>Tối ưu CTA, trải nghiệm và chất lượng chuyển đổi.</td></tr>
+  <tr><td><span class="flow-step"><span class="ico-badge sm"><svg class="ico"><use href="#i-pencil"></use></svg></span>1. Content</span></td><td>Thu hút đúng nhu cầu</td><td>Xem bài viết, Reel, carousel hoặc quảng cáo chạm đúng vấn đề.</td><td>Xác định persona, pain point và CTA dẫn tới tài nguyên phù hợp.</td><td>Hiểu vấn đề và bắt đầu Lead Magnet.</td></tr>
+  <tr><td><span class="flow-step"><span class="ico-badge sm"><svg class="ico"><use href="#i-gift"></use></svg></span>2. Nhận giá trị</span></td><td>Đổi giá trị lấy thông tin</td><td>Điền form ngắn để nhận quiz, checklist, calculator hoặc ebook.</td><td>Tạo landing page, form và gửi tài nguyên ngay sau khi hoàn tất.</td><td>PNE có thông tin cơ bản và dữ liệu hành vi.</td></tr>
+  <tr><td><span class="flow-step"><span class="ico-badge sm"><svg class="ico"><use href="#i-users"></use></svg></span>3. Phân loại nhu cầu</span></td><td>Hiểu người dùng</td><td>Trả lời câu hỏi hoặc chọn mối quan tâm, thời điểm sẵn sàng.</td><td>Phân loại theo nhóm khách hàng, ngành, nhu cầu và mức độ sẵn sàng.</td><td>Biết nên gửi gì tiếp theo và lead nào cần tư vấn sớm.</td></tr>
+  <tr><td><span class="flow-step"><span class="ico-badge sm"><svg class="ico"><use href="#i-message"></use></svg></span>4. Tư vấn phù hợp</span></td><td>Biến lead thành cuộc trò chuyện</td><td>Nhận nội dung hoặc lời mời tư vấn phù hợp với kết quả.</td><td>Tư vấn viên liên hệ dựa trên dữ liệu lead, không hỏi lại từ đầu.</td><td>Lịch hẹn, hồ sơ đánh giá hoặc cơ hội đăng ký.</td></tr>
+  <tr><td><span class="flow-step"><span class="ico-badge sm"><svg class="ico"><use href="#i-chart"></use></svg></span>5. Đo lường</span></td><td>Biết flow có hiệu quả không</td><td>Không cần thao tác thêm.</td><td>Theo dõi lead hợp lệ, lịch hẹn và chuyển đổi để tối ưu.</td><td>Tối ưu CTA, trải nghiệm và chất lượng chuyển đổi.</td></tr>
   </tbody></table></div>
     <div class="section"><div class="section-head"><h2>Chi tiết từng bước</h2></div>
     <div class="detail-step"><h4>Bước 1: Content thu hút đúng người</h4><p><strong>Mục tiêu:</strong> Thu hút đúng nhóm khách hàng bằng một nội dung chạm vào vấn đề cụ thể, sau đó dẫn họ đến Lead Magnet phù hợp.</p><p><strong>Content cần trả lời được ba câu hỏi:</strong></p><ul><li>Nội dung này đang nói với ai?</li><li>Người đó đang gặp vấn đề gì?</li><li>Lead Magnet nào giúp họ giải quyết bước đầu?</li></ul></div>
     <div class="detail-step"><h4>Bước 2: Nhận giá trị – Lead Magnet</h4><p><strong>Mục tiêu:</strong> Đưa người dùng đến landing page riêng, điền thông tin và sau đó nhận hoặc sử dụng tài nguyên.</p><p><strong>Cấu trúc chung:</strong> Landing page riêng → Giới thiệu giá trị → Điền thông tin → Nhận hoặc sử dụng Lead Magnet.</p><p><strong>Cấu trúc form nên dùng:</strong> Họ tên; Số điện thoại/Zalo; Email; Mối quan tâm chính; Thời điểm sẵn sàng du học.</p></div>
-    <div class="detail-step"><h4>Bước 3: Phân loại nhu cầu</h4><p><strong>Mục tiêu:</strong> Xác định người dùng thuộc nhóm nào, đang quan tâm điều gì và đã sẵn sàng đến mức nào để không tư vấn tất cả mọi người bằng cùng một cách.</p><p><strong>Dữ liệu:</strong> Nhóm khách hàng; mối quan tâm; kết quả Lead Magnet; thời điểm sẵn sàng.</p><p><strong>Phân nhóm lead:</strong> Hot – chuyển tư vấn viên xử lý sớm; Warm – gửi nội dung follow-up rồi mời tư vấn; Cold – tiếp tục cung cấp nội dung giáo dục; Chưa phù hợp – không đưa vào pipeline tư vấn chính.</p></div>
-    <div class="detail-step"><h4>Bước 4: Tư vấn phù hợp</h4><p><strong>Mục tiêu:</strong> Đưa người dùng đến bước tư vấn phù hợp với nhu cầu và mức độ sẵn sàng, thay vì dùng một CTA chung cho tất cả.</p><p><strong>Hai hướng xử lý:</strong> Lead đã sẵn sàng: Kết quả Lead Magnet → Tư vấn viên liên hệ → Đặt lịch → Tư vấn cá nhân. Lead chưa sẵn sàng: Kết quả Lead Magnet → Gửi nội dung liên quan → Theo dõi tương tác → Mời tư vấn khi có tín hiệu.</p></div>
-    <div class="detail-step"><h4>Bước 5: Đo lường kết quả</h4><p><strong>Mục tiêu:</strong> Đánh giá Lead Magnet có thực sự tạo ra lead chất lượng và kết quả kinh doanh hay chỉ tạo ra lượt tương tác.</p><p><strong>Cách đọc dữ liệu:</strong> Nhiều người xem nhưng ít bấm CTA → Content hoặc CTA chưa đủ rõ; nhiều người bắt đầu nhưng bỏ giữa chừng → quiz dài, câu hỏi khó hoặc trải nghiệm chưa tốt; nhiều người hoàn thành nhưng ít để lại thông tin → kết quả chi tiết chưa đủ hấp dẫn; nhiều lead nhưng ít lịch tư vấn → phân loại hoặc CTA chưa phù hợp; có lịch hẹn nhưng ít chuyển đổi → chất lượng lead hoặc kịch bản tư vấn cần xem lại.</p></div>
+    <div class="detail-step"><h4>Bước 3: Phân loại nhu cầu</h4><p><strong>Mục tiêu:</strong> Xác định người dùng thuộc nhóm nào, đang quan tâm điều gì và đã sẵn sàng đến mức nào để không tư vấn tất cả mọi người bằng cùng một cách.</p><table class="step-table"><caption>Dữ liệu để phân loại</caption><thead><tr><th>Nhóm dữ liệu</th><th>Chi tiết</th></tr></thead><tbody><tr><td>Nhóm khách hàng</td><td>Học sinh, người sau THPT, sinh viên, người đi làm, phụ huynh.</td></tr><tr><td>Mối quan tâm</td><td>Chọn ngành, chi phí, tiếng Đức, visa, việc làm, hồ sơ.</td></tr><tr><td>Kết quả Lead Magnet</td><td>Kết quả quiz, nhóm ngành, lựa chọn trong checklist.</td></tr><tr><td>Thời điểm</td><td>Chưa xác định, 6–12 tháng, 3–6 tháng, muốn tư vấn ngay.</td></tr></tbody></table><table class="step-table"><caption>Phân nhóm lead</caption><thead><tr><th>Nhóm</th><th>Đặc điểm</th><th>Cách xử lý</th></tr></thead><tbody><tr><td>Hot</td><td>Muốn tư vấn ngay hoặc chủ động đặt lịch.</td><td>Chuyển tư vấn viên xử lý sớm.</td></tr><tr><td>Warm</td><td>Có nhu cầu rõ nhưng chưa sẵn sàng.</td><td>Gửi nội dung follow-up rồi mời tư vấn.</td></tr><tr><td>Cold</td><td>Mới tìm hiểu, chưa xác định nhu cầu.</td><td>Tiếp tục cung cấp nội dung giáo dục.</td></tr><tr><td>Chưa phù hợp</td><td>Không thuộc nhóm mục tiêu hoặc thông tin không hợp lệ.</td><td>Không đưa vào pipeline tư vấn chính.</td></tr></tbody></table></div>
+    <div class="detail-step"><h4>Bước 4: Tư vấn phù hợp</h4><p><strong>Mục tiêu:</strong> Đưa người dùng đến bước tư vấn phù hợp với nhu cầu và mức độ sẵn sàng, thay vì dùng một CTA chung cho tất cả.</p><div class="path-list"><div class="path-item"><strong>Với lead đã sẵn sàng</strong><span>Kết quả Lead Magnet → Tư vấn viên liên hệ → Đặt lịch → Tư vấn cá nhân.</span></div><div class="path-item"><strong>Với lead chưa sẵn sàng</strong><span>Kết quả Lead Magnet → Gửi nội dung liên quan → Theo dõi tương tác → Mời tư vấn khi có tín hiệu.</span></div></div></div>
+    <div class="detail-step"><h4>Bước 5: Đo lường kết quả</h4><p><strong>Mục tiêu:</strong> Đánh giá Lead Magnet có thực sự tạo ra lead chất lượng và kết quả kinh doanh hay chỉ tạo ra lượt tương tác.</p><table class="step-table measurement-table"><caption>Cách đọc dữ liệu</caption><thead><tr><th>Hiện tượng</th><th>Có thể đang gặp vấn đề ở đâu?</th></tr></thead><tbody><tr><td>Nhiều người xem nhưng ít bấm CTA</td><td>Content hoặc CTA chưa đủ rõ.</td></tr><tr><td>Nhiều người bắt đầu nhưng bỏ giữa chừng</td><td>Quiz dài, câu hỏi khó hoặc trải nghiệm chưa tốt.</td></tr><tr><td>Nhiều người hoàn thành nhưng ít để lại thông tin</td><td>Kết quả chi tiết chưa đủ hấp dẫn.</td></tr><tr><td>Nhiều lead nhưng ít lịch tư vấn</td><td>Phân loại hoặc CTA chưa phù hợp.</td></tr><tr><td>Có lịch hẹn nhưng ít chuyển đổi</td><td>Chất lượng lead hoặc kịch bản tư vấn cần xem lại.</td></tr></tbody></table></div>
   </div>
   <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin:var(--s3) 0 14px;"><span class="ico-badge sm"><svg class="ico"><use href="#i-gift"></use></svg></span> Đề xuất Lead Magnet</h4>
   <div class="mini-grid">
@@ -2982,6 +3094,7 @@
   function closeAllDrawers(){
     document.querySelectorAll('.drawer.open').forEach(d=>d.classList.remove('open'));
     if(drawerOverlay) drawerOverlay.classList.remove('open');
+    document.body.classList.remove('modal-open');
   }
   document.querySelectorAll('[data-drawer]').forEach(trigger=>{
     trigger.addEventListener('click', ()=>{
@@ -2991,6 +3104,7 @@
       closeAllDrawers();
       drawer.classList.add('open');
       if(drawerOverlay) drawerOverlay.classList.add('open');
+      document.body.classList.add('modal-open');
     });
   });
   document.querySelectorAll('[data-close-drawer]').forEach(btn=>{
